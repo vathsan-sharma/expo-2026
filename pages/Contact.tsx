@@ -15,13 +15,13 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <div className="pb-32 bg-brand-obsidian min-h-screen">
+    <div className="pb-32 bg-white min-h-screen">
       {/* Header */}
-      <section className="bg-brand-obsidian pt-48 pb-24 text-center relative overflow-hidden bg-dots">
+      <section className="bg-white pt-48 pb-24 text-center relative overflow-hidden bg-dots">
         <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
           <span className="text-brand-emerald font-black uppercase tracking-[0.5em] text-xs mb-8 block italic">Global Secretariat</span>
-          <h1 className="text-5xl md:text-8xl font-black text-brand-platinum mb-10 uppercase tracking-tighter leading-none">Contact Us</h1>
-          <p className="text-brand-platinum/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
+          <h1 className="text-5xl md:text-8xl font-black text-brand-obsidian mb-10 uppercase tracking-tighter leading-none">Contact Us</h1>
+          <p className="text-gray-400 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
             Our specialized team is available to handle high-level logistical, diplomatic, and partnership inquiries.
           </p>
         </div>
@@ -39,13 +39,13 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="pt-12">
-               <div className="relative h-72 bg-brand-forest/10 rounded-[3rem] overflow-hidden border border-white/5 flex flex-col items-center justify-center group">
+               <div className="relative h-72 bg-brand-platinum rounded-[3rem] overflow-hidden border border-gray-100 flex flex-col items-center justify-center group shadow-sm">
                   <img 
                     src="https://images.unsplash.com/photo-1524850041227-6177e4f4f3cd?auto=format&fit=crop&q=80&w=800" 
                     className="absolute inset-0 w-full h-full object-cover grayscale opacity-20 group-hover:opacity-40 transition-opacity" 
                     alt="Toronto Map Context" 
                   />
-                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.address)}`} target="_blank" rel="noopener noreferrer" className="relative z-10 bg-brand-emerald text-brand-obsidian px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-widest flex items-center gap-2 hover:bg-brand-platinum transition-all shadow-2xl">
+                  <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.address)}`} target="_blank" rel="noopener noreferrer" className="relative z-10 bg-brand-emerald text-white px-8 py-4 rounded-full font-black text-[10px] uppercase tracking-widest flex items-center gap-2 hover:bg-brand-obsidian transition-all shadow-2xl">
                     View on Map <ExternalLink className="w-3 h-3" />
                   </a>
                </div>
@@ -53,16 +53,16 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="lg:col-span-2 reveal" style={{ transitionDelay: '200ms' }}>
-            <div className="glass-card p-12 md:p-20 rounded-[4rem] border border-white/5 shadow-2xl relative overflow-hidden bg-dots">
-              <h3 className="text-4xl font-black mb-12 uppercase tracking-tighter text-brand-platinum leading-none">Dispatch Inquiry</h3>
+            <div className="bg-brand-platinum p-12 md:p-20 rounded-[4rem] border border-gray-100 shadow-2xl relative overflow-hidden bg-dots">
+              <h3 className="text-4xl font-black mb-12 uppercase tracking-tighter text-brand-obsidian leading-none">Dispatch Inquiry</h3>
               <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid md:grid-cols-2 gap-10">
                   <InputGroup label="Identity" placeholder="Full Name" />
                   <InputGroup label="Corporate Body" placeholder="Organization" />
                   <InputGroup label="Direct Email" placeholder="business@example.com" type="email" />
                   <div className="space-y-4">
-                    <label className="text-[10px] font-black text-brand-platinum/30 uppercase tracking-[0.3em] italic ml-4">Subject Domain</label>
-                    <select className="w-full px-8 py-5 rounded-3xl bg-white/5 border border-white/5 focus:border-brand-emerald outline-none font-black uppercase text-[10px] tracking-widest text-brand-platinum cursor-pointer shadow-inner">
+                    <label className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] italic ml-4">Subject Domain</label>
+                    <select className="w-full px-8 py-5 rounded-3xl bg-white border border-gray-100 focus:border-brand-emerald outline-none font-black uppercase text-[10px] tracking-widest text-brand-obsidian cursor-pointer shadow-sm">
                       <option>General Support</option>
                       <option>Media Accreditation</option>
                       <option>Sponsorship Council</option>
@@ -71,10 +71,10 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="space-y-4">
-                    <label className="text-[10px] font-black text-brand-platinum/30 uppercase tracking-[0.3em] italic ml-4">Inquiry Body</label>
-                    <textarea rows={8} placeholder="Describe your inquiry in high-level detail..." className="w-full px-8 py-6 rounded-[2rem] bg-white/5 border border-white/5 focus:border-brand-emerald outline-none font-medium text-brand-platinum transition-all shadow-inner"></textarea>
+                    <label className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] italic ml-4">Inquiry Body</label>
+                    <textarea rows={8} placeholder="Describe your inquiry in high-level detail..." className="w-full px-8 py-6 rounded-[2rem] bg-white border border-gray-100 focus:border-brand-emerald outline-none font-medium text-brand-obsidian transition-all shadow-sm"></textarea>
                 </div>
-                <button className="bg-brand-emerald text-brand-obsidian px-12 py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-brand-platinum transition-all shadow-3xl shadow-brand-emerald/20 flex items-center justify-center gap-4 group">
+                <button className="bg-brand-emerald text-white px-12 py-6 rounded-full font-black text-xs uppercase tracking-[0.4em] hover:bg-brand-obsidian transition-all shadow-xl shadow-brand-emerald/10 flex items-center justify-center gap-4 group">
                   Send Message <Send className="w-4 h-4 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
@@ -88,23 +88,23 @@ const Contact: React.FC = () => {
 
 const ContactBlock = ({ icon, title, content }: { icon: React.ReactNode, title: string, content: string }) => (
   <div className="flex items-start gap-8 group">
-    <div className="w-16 h-16 rounded-2xl bg-brand-forest/20 border border-white/5 flex items-center justify-center text-brand-emerald flex-shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+    <div className="w-16 h-16 rounded-2xl bg-brand-platinum border border-gray-100 flex items-center justify-center text-brand-emerald flex-shrink-0 group-hover:bg-brand-emerald group-hover:text-white transition-all shadow-sm">
       {React.cloneElement(icon as React.ReactElement, { className: 'w-7 h-7' })}
     </div>
     <div>
       <h4 className="font-black uppercase tracking-[0.2em] text-brand-emerald text-xs mb-2 italic">{title}</h4>
-      <p className="text-brand-platinum text-lg font-medium leading-relaxed">{content}</p>
+      <p className="text-brand-obsidian text-lg font-medium leading-relaxed">{content}</p>
     </div>
   </div>
 );
 
 const InputGroup = ({ label, placeholder, type = "text" }: { label: string, placeholder: string, type?: string }) => (
   <div className="space-y-4 group">
-    <label className="text-[10px] font-black text-brand-platinum/30 uppercase tracking-[0.3em] italic ml-4 group-focus-within:text-brand-emerald transition-colors">{label}</label>
+    <label className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em] italic ml-4 group-focus-within:text-brand-emerald transition-colors">{label}</label>
     <input 
       type={type} 
       placeholder={placeholder} 
-      className="w-full px-8 py-5 rounded-3xl bg-white/5 border border-white/5 focus:border-brand-emerald outline-none font-medium text-brand-platinum transition-all shadow-inner" 
+      className="w-full px-8 py-5 rounded-3xl bg-white border border-gray-100 focus:border-brand-emerald outline-none font-medium text-brand-obsidian transition-all shadow-sm" 
     />
   </div>
 );
