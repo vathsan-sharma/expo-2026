@@ -28,26 +28,101 @@ export const HIGHLIGHTS: Feature[] = [
 ];
 
 export const SECTORS: Sector[] = [
-  { id: 'tourism', title: 'Tourism & Hospitality', description: 'Asia–Canada travel links; tourism & travel investments.', icon: <Palmtree />, subsectors: ['Tourism Infrastructure', 'Sustainable Travel', 'Hospitality Tech'] },
-  { id: 'ai', title: 'AI & Technology', description: 'Smart tech, digital innovation; Asia–Canada tech collaboration.', icon: <Cpu />, subsectors: ['SaaS & FinTech', 'Smart City Solutions', 'Cross-border R&D'] },
-  { id: 'lifestyle', title: 'Lifestyle', description: 'Fashion and jewelry; precious stones; porcelain products.', icon: <Gem />, subsectors: ['Ethical Fashion', 'Gems & Jewelry', 'Luxury Goods'] },
-  { id: 'energy', title: 'Energy & Sustainability', description: 'Oil and gas innovations; clean tech; green partnerships.', icon: <Droplets />, subsectors: ['Renewables', 'Carbon Management', 'Green Infrastructure'] },
-  { id: 'partnerships', title: 'Partnerships & Expansion', description: 'Canada–Asia trade alliances; joint ventures; market growth.', icon: <Handshake />, subsectors: ['Joint Ventures', 'Regulatory Navigation', 'Strategic Alliances'] },
-  { id: 'agriculture', title: 'Agriculture & Food Security', description: 'Agrotech; sustainable food systems.', icon: <Leaf />, subsectors: ['Precision Farming', 'Supply Chain Tech', 'Food Export'] },
-  { id: 'knowledge', title: 'Knowledge Exchange', description: 'Research collaboration; global talent development.', icon: <GraduationCap />, subsectors: ['EdTech', 'Corporate Training', 'Academic Research'] },
-  { id: 'trade', title: 'Trade & Investment', description: 'Supply chain integration; imports & exports; Canada–Asia investment ties.', icon: <BarChart3 />, subsectors: ['Trade Finance', 'FDI Consulting', 'Global Logistics'] }
+  { id: 'tourism', title: 'Tourism & Hospitality', description: 'Asia – Canada Travel links; Tourism & Travel Investments.', icon: <Palmtree />, subsectors: ['Tourism Infrastructure', 'Sustainable Travel', 'Hospitality Tech'] },
+  { id: 'ai', title: 'AI & Technology', description: 'Smart Tech & Digital Innovation; Asia – CanadaTech Collaboration.', icon: <Cpu />, subsectors: ['SaaS & FinTech', 'Smart City Solutions', 'Cross-border R&D'] },
+  { id: 'lifestyle', title: 'Lifestyle', description: 'Fashion & Jewelry; Precious stones; Porcelain products.', icon: <Gem />, subsectors: ['Ethical Fashion', 'Gems & Jewelry', 'Luxury Goods'] },
+  { id: 'energy', title: 'Energy & Sustainability', description: 'Oil & Gas Innovations; Clean tech; Green Partnerships.', icon: <Droplets />, subsectors: ['Renewables', 'Carbon Management', 'Green Infrastructure'] },
+  { id: 'partnerships', title: 'Partnerships & Expansion', description: 'Canada– Asia Trade alliances and joint ventures; Market Growth.', icon: <Handshake />, subsectors: ['Joint Ventures', 'Regulatory Navigation', 'Strategic Alliances'] },
+  { id: 'agriculture', title: 'Agriculture & Food Security', description: 'Agro tech & Sustainable Food Systems.', icon: <Leaf />, subsectors: ['Precision Farming', 'Supply Chain Tech', 'Food Export'] },
+  { id: 'knowledge', title: 'Knowledge Exchange', description: 'Research Collaboration; Global talent development.', icon: <GraduationCap />, subsectors: ['EdTech', 'Corporate Training', 'Academic Research'] },
+  { id: 'trade', title: 'Trade & Investment', description: 'Supply chain integration; Imports & Exports; Canada– Asia Investment Ties.', icon: <BarChart3 />, subsectors: ['Trade Finance', 'FDI Consulting', 'Global Logistics'] }
 ];
 
 export const COUNTRIES: Country[] = [
-  { id: 'canada', name: 'Canada', flag: '🇨🇦', summary: 'Natural resources, manufacturing, technology.', strengths: ['High-Tech Manufacturing', 'Natural Resources'] },
-  { id: 'srilanka', name: 'Sri Lanka', flag: '🇱🇰', summary: 'Apparel, IT, tourism, education.', strengths: ['Apparel Exports', 'Software Development'] },
-  { id: 'indonesia', name: 'Indonesia', flag: '🇮🇩', summary: 'Natural resources, e-commerce, infrastructure.', strengths: ['Digital Economy', 'Infrastructure Development'] },
-  { id: 'thailand', name: 'Thailand', flag: '🇹🇭', summary: 'Automotive, tourism, technology.', strengths: ['Automotive Hub', 'Advanced Logistics'] },
-  { id: 'pakistan', name: 'Pakistan', flag: '🇵🇰', summary: 'Agriculture, textiles, cement.', strengths: ['Textile Manufacturing', 'Agri-Exports'] },
-  { id: 'vietnam', name: 'Vietnam', flag: '🇻🇳', summary: 'Manufacturing, electronics, agriculture.', strengths: ['Electronics Hub', 'Regional Manufacturing'] },
-  { id: 'philippines', name: 'Philippines', flag: '🇵🇭', summary: 'Tourism & hospitality, energy, BPO, fintech.', strengths: ['Fintech Growth', 'Business Process Outsourcing'] },
-  { id: 'malaysia', name: 'Malaysia', flag: '🇲🇾', summary: 'Oil & gas, finance, technology.', strengths: ['Islamic Finance', 'Energy Resources'] }
+  { 
+    id: 'canada', 
+    name: 'Canada', 
+    flag: '🇨🇦', 
+    summary: 'Natural resources, Manufacturing, Technology.', 
+    strengths: ['Natural Resources', 'Manufacturing', 'Technology'],
+    investmentAreas: ['Clean Energy', 'AI & Quantum Computing', 'Critical Minerals'],
+    tradeOpportunities: ['Tech Export', 'Raw Material Supply', 'Joint R&D']
+  },
+  { 
+    id: 'srilanka', 
+    name: 'Sri Lanka', 
+    flag: '🇱🇰', 
+    summary: 'Apparel | IT, Tourism | Education.', 
+    strengths: ['Apparel', 'IT', 'Tourism', 'Education'],
+    investmentAreas: ['Port City Development', 'Renewable Energy', 'Tech Parks'],
+    tradeOpportunities: ['Apparel Sourcing', 'IT Outsourcing', 'Ceylon Tea Export']
+  },
+  { 
+    id: 'philippines', 
+    name: 'Philippines', 
+    flag: '🇵🇭', 
+    summary: 'Energy | BPO, Fintech.', 
+    strengths: ['Energy', 'BPO', 'Fintech'],
+    investmentAreas: ['Digital Infrastructure', 'Renewable Energy', 'Manufacturing'],
+    tradeOpportunities: ['BPO Services', 'Electronics Export', 'Fintech Partnerships']
+  },
+  { 
+    id: 'indonesia', 
+    name: 'Indonesia', 
+    flag: '🇮🇩', 
+    summary: 'Natural Resources, E-commerce, Infrastructure.', 
+    strengths: ['Natural Resources', 'E-commerce', 'Infrastructure'],
+    investmentAreas: ['Nickel Processing', 'New Capital City', 'Digital Economy'],
+    tradeOpportunities: ['Commodity Trade', 'E-commerce Expansion', 'Infrastructure Dev']
+  },
+  { 
+    id: 'thailand', 
+    name: 'Thailand', 
+    flag: '🇹🇭', 
+    summary: 'Automotive | Tourism, Technology.', 
+    strengths: ['Automotive', 'Tourism', 'Technology'],
+    investmentAreas: ['Eastern Economic Corridor', 'EV Manufacturing', 'Smart Electronics'],
+    tradeOpportunities: ['Auto Parts Supply', 'Food Processing', 'Medical Tourism']
+  },
+  { 
+    id: 'pakistan', 
+    name: 'Pakistan', 
+    flag: '🇵🇰', 
+    summary: 'Agriculture | Textiles, Cement.', 
+    strengths: ['Agriculture', 'Textiles', 'Cement'],
+    investmentAreas: ['Special Economic Zones', 'IT Services', 'Agro-processing'],
+    tradeOpportunities: ['Textile Export', 'Surgical Instruments', 'Software Dev']
+  },
+  { 
+    id: 'vietnam', 
+    name: 'Vietnam', 
+    flag: '🇻🇳', 
+    summary: 'Manufacturing, Electronics | Agriculture.', 
+    strengths: ['Manufacturing', 'Electronics', 'Agriculture'],
+    investmentAreas: ['High-tech Manufacturing', 'Logistics Hubs', 'Energy Transition'],
+    tradeOpportunities: ['Electronics Supply Chain', 'Footwear Export', 'Coffee Trade']
+  },
+  { 
+    id: 'malaysia', 
+    name: 'Malaysia', 
+    flag: '🇲🇾', 
+    summary: 'Oil & Gas, Finance.', 
+    strengths: ['Oil & Gas', 'Finance'],
+    investmentAreas: ['Semiconductor Hub', 'Islamic Finance', 'Digital Transformation'],
+    tradeOpportunities: ['Halal Industry', 'Palm Oil Products', 'Tech Services']
+  }
 ];
+
+export const PARTNER_SKYLINES: Record<string, string> = {
+  canada: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&q=80&w=1200",
+  srilanka: "https://images.unsplash.com/photo-1529154036614-a60975f5c760?auto=format&fit=crop&q=80&w=1200",
+  indonesia: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=1200",
+  thailand: "https://images.unsplash.com/photo-1501179691627-eeaa65ea017c?auto=format&fit=crop&q=80&w=1200",
+  pakistan: "https://images.unsplash.com/photo-1569330112438-3b90189a8ce1?auto=format&fit=crop&q=80&w=1200",
+  vietnam: "https://images.unsplash.com/photo-1509030450996-93f25ef2499a?auto=format&fit=crop&q=80&w=1200",
+  philippines: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1200",
+  malaysia: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200"
+};
 
 export const IMPACT_STATS: Milestone[] = [
   { value: '10', label: 'Countries Represented', icon: <Globe /> },

@@ -12,11 +12,10 @@
             colors: {
               brand: {
                 obsidian: '#0B1215',    // Primary Text
-                forest: '#1B4332',      // Deep Accent
-                emerald: '#27AE60',     // Vibrant Emerald (slightly deepened for light contrast)
+                navy: '#1A2238',        // Deep Navy Background
+                coral: '#E31837',       // Vibrant Red Accent
                 platinum: '#F8F9FA',    // Light Background
                 white: '#FFFFFF',
-                red: '#C0392B',         // Classic Red for Canada
               }
             },
             fontFamily: {
@@ -58,8 +57,8 @@
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #FFFFFF;
-        color: #0B1215;
+        background-color: #1A2238;
+        color: #FFFFFF;
         overflow-x: hidden;
       }
 
@@ -79,21 +78,21 @@
       .reveal-delay-4 { transition-delay: 400ms; }
 
       .glass-card {
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .glass-card:hover {
-        background: #FFFFFF;
-        border-color: #27AE60;
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #E31837;
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
       }
 
       .bg-dots {
-        background-image: radial-gradient(rgba(39, 174, 96, 0.05) 1px, transparent 1px);
+        background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
         background-size: 40px 40px;
       }
 
@@ -116,7 +115,7 @@
         top: 0;
         left: 0;
         height: 4px;
-        background: #27AE60;
+        background: #E31837;
         z-index: 1001;
         width: 0%;
       }
@@ -139,7 +138,7 @@
     </script>
   <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="selection:bg-brand-emerald selection:text-white">
+  <body class="selection:bg-brand-coral/30 selection:text-white">
     <div id="scroll-progress"></div>
     <div id="root"></div>
     <script>

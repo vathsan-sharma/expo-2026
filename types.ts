@@ -27,6 +27,8 @@ export interface Country {
   flag: string;
   summary: string;
   strengths: string[];
+  investmentAreas?: string[];
+  tradeOpportunities?: string[];
 }
 
 export interface Feature {

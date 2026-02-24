@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Target, Globe, Users, Briefcase, TrendingUp, ShieldCheck } from 'lucide-react';
-import { MILESTONES } from '../constants';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Target, Eye, Users, LayoutGrid, ShieldCheck, Globe, Star } from 'lucide-react';
 
 const About: React.FC = () => {
   useEffect(() => {
@@ -15,83 +15,123 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="pb-32 bg-white">
+    <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-white pt-48 pb-24 text-center relative overflow-hidden bg-dots">
+      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
-          <span className="text-brand-emerald font-black uppercase tracking-[0.5em] text-xs mb-8 block italic">Strategic Context</span>
-          <h1 className="text-5xl md:text-8xl font-black text-brand-obsidian mb-10 uppercase tracking-tighter leading-none">About the Expo</h1>
-          <p className="text-gray-400 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            A powerful platform for international collaboration, establishing a permanent industrial bridge between Canada and Asia’s emerging growth engines.
+          <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Our Vision</span>
+          <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none">About the Expo</h1>
+          <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
+            AEEE 2026 is the definitive platform for cross-border trade, innovation, and strategic investment between Canada and Asia's emerging economies.
           </p>
         </div>
       </section>
 
-      {/* Vision */}
+      {/* About AEEE 2026 */}
       <section className="py-32 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-24 items-center mb-48">
           <div className="reveal">
-            <h2 className="text-4xl md:text-6xl font-black mb-10 uppercase tracking-tighter text-brand-emerald leading-[0.9]">Vision & Purpose</h2>
-            <p className="text-gray-500 text-xl leading-relaxed mb-12 font-medium italic">
-              Our mission is to highlight high-impact opportunities across key sectors. We aim to establish a definitive trade nexus facilitating the flow of capital and innovation between Toronto and the world's most dynamic frontiers.
+            <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">AEEE 2026</h2>
+            <p className="text-white/60 text-xl leading-relaxed mb-8 font-medium italic">
+              Asia's Emerging Economies Expo (AEEE) 2026 is more than just a trade show; it is a catalyst for global economic integration.
             </p>
-            <div className="space-y-8">
-              <div className="flex items-start gap-8 glass-card p-8 rounded-3xl shadow-sm border border-gray-100">
-                <div className="w-14 h-14 bg-brand-platinum text-brand-emerald rounded-2xl flex-shrink-0 flex items-center justify-center">
-                   <Target className="w-7 h-7" />
-                </div>
-                <div>
-                  <h4 className="font-black uppercase tracking-tight text-brand-obsidian mb-1 text-xl">High-Impact Growth</h4>
-                  <p className="text-[11px] text-gray-400 font-bold uppercase tracking-widest italic">Targeting multi-generational potential.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-8 glass-card p-8 rounded-3xl shadow-sm border border-gray-100">
-                <div className="w-14 h-14 bg-brand-platinum text-brand-emerald rounded-2xl flex-shrink-0 flex items-center justify-center">
-                   <ShieldCheck className="w-7 h-7" />
-                </div>
-                <div>
-                  <h4 className="font-black uppercase tracking-tight text-brand-obsidian mb-1 text-xl">Policy Integration</h4>
-                  <p className="text-[11px] text-gray-400 font-bold uppercase tracking-widest italic">Government-supported trade dialogues.</p>
-                </div>
-              </div>
+            <p className="text-white/40 text-lg leading-relaxed mb-12 italic font-medium">
+              Hosted in Toronto, North America's fastest-growing tech and financial hub, the expo serves as a strategic bridge for businesses looking to navigate the complexities of international expansion and tap into the world's most dynamic growth engines.
+            </p>
+            <div className="flex gap-6">
+              <Link to="/registration" className="bg-brand-coral text-white px-10 py-5 rounded-sm font-bold text-sm tracking-tight hover:bg-white hover:text-brand-coral transition-all shadow-xl">
+                Join the Expo
+              </Link>
             </div>
           </div>
-          <div className="reveal rounded-[4rem] overflow-hidden shadow-2xl relative group">
-            <img 
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1000" 
-              alt="Vision" 
-              className="group-hover:scale-105 transition-transform duration-1000 grayscale opacity-40 hover:grayscale-0 hover:opacity-100" 
-            />
+          <div className="reveal relative aspect-video rounded-sm overflow-hidden border border-white/10 group">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="About" />
           </div>
         </div>
 
-        {/* Narrative */}
-        <div className="bg-brand-platinum rounded-[4rem] p-16 md:p-32 text-brand-obsidian reveal text-center mb-48 border border-gray-100 relative bg-dots">
-           <h2 className="text-4xl md:text-[5.5rem] font-black mb-10 uppercase tracking-tighter leading-none">Global Expansion</h2>
-           <p className="text-gray-500 text-xl font-medium italic leading-relaxed max-w-4xl mx-auto mb-20">
-             Toronto is Canada’s global financial hub, the ideal host for AEEE 2026. This expo acts as a specialized portal for investors and leaders to navigate the complexities of emerging markets.
-           </p>
-           <div className="grid md:grid-cols-3 gap-16">
-              {[
-                { t: 'Why Toronto', d: 'North America’s fastest-growing tech hub.' },
-                { t: 'The Frontier', d: 'Sri Lanka, Vietnam, Indonesia — the new industrial hub.' },
-                { t: 'Strategic Alliances', d: 'Lasting joint ventures for innovation.' }
-              ].map((item, i) => (
-                <div key={i} className="space-y-4">
-                  <h4 className="text-xl font-black uppercase tracking-tighter text-brand-emerald italic">[{item.t}]</h4>
-                  <p className="text-gray-400 text-[10px] font-black leading-relaxed tracking-widest uppercase italic">{item.d}</p>
-                </div>
-              ))}
-           </div>
+        {/* Vision & Mission */}
+        <div className="grid md:grid-cols-2 gap-12 mb-48 reveal">
+          <div className="glass-card p-12 md:p-20 border border-white/10 space-y-8 group hover:border-brand-coral transition-all">
+            <Target className="w-16 h-16 text-brand-coral" />
+            <h3 className="text-4xl font-black text-white tracking-tighter italic">Our Mission</h3>
+            <p className="text-white/40 text-lg italic font-medium leading-relaxed">
+              To facilitate high-impact partnerships and knowledge exchange that drive sustainable economic growth across the Asia-Canada corridor.
+            </p>
+          </div>
+          <div className="glass-card p-12 md:p-20 border border-white/10 space-y-8 group hover:border-brand-coral transition-all">
+            <Eye className="w-16 h-16 text-brand-coral" />
+            <h3 className="text-4xl font-black text-white tracking-tighter italic">Our Vision</h3>
+            <p className="text-white/40 text-lg italic font-medium leading-relaxed">
+              To be the world's leading platform for emerging market intelligence and cross-continental business collaboration.
+            </p>
+          </div>
         </div>
 
-        {/* Quick Stats */}
-        <div className="bg-brand-emerald rounded-[3rem] py-20 reveal shadow-xl shadow-brand-emerald/10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center text-white">
-            {MILESTONES.map((stat, i) => (
-              <div key={i} className="space-y-1">
-                <div className="text-6xl font-black tracking-tighter uppercase">{stat.value}</div>
-                <div className="text-[10px] font-black uppercase tracking-widest opacity-60">{stat.label}</div>
+        {/* Who You Will Meet */}
+        <div className="mb-48 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Who You Will Meet</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Policy Makers", desc: "Government ministers and trade commissioners from 8+ nations." },
+              { title: "Investors", desc: "Venture capitalists and institutional investors seeking frontier opportunities." },
+              { title: "Industry Leaders", desc: "C-suite executives from high-growth sectors like Fintech and Energy." }
+            ].map((profile, i) => (
+              <div key={i} className="text-center space-y-6 p-12 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 transition-all">
+                <Users className="w-12 h-12 text-brand-coral mx-auto" />
+                <h4 className="text-2xl font-black text-white tracking-tighter italic">{profile.title}</h4>
+                <p className="text-white/40 text-sm italic font-medium leading-relaxed">{profile.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* How the Expo Is Structured */}
+        <div className="bg-white/5 rounded-sm p-16 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-48">
+          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tighter leading-none text-center italic">Expo Structure</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { icon: <LayoutGrid />, title: "Exhibition Zones", text: "National pavilions and sector-specific clusters showcasing innovation." },
+              { icon: <Star />, title: "Conference Tracks", text: "High-level keynotes and technical sessions on market trends." },
+              { icon: <Globe />, title: "B2B Matchmaking", text: "Curated networking sessions for pre-qualified trade partners." }
+            ].map((item, i) => (
+              <div key={i} className="space-y-6 text-center">
+                <div className="text-brand-coral">{React.cloneElement(item.icon as React.ReactElement, { className: 'w-12 h-12 mx-auto' })}</div>
+                <h4 className="text-xl font-black tracking-tighter italic">{item.title}</h4>
+                <p className="text-white/40 text-[11px] font-bold tracking-tight italic leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Organizers and Partners */}
+        <div className="mb-48 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Organizers & Partners</h2>
+          <div className="flex flex-wrap justify-center gap-16 opacity-20 grayscale">
+            {[1, 2, 3, 4, 5].map(i => (
+              <div key={i} className="w-40 h-20 bg-white/10 rounded-sm flex items-center justify-center font-bold text-xs">Partner {i}</div>
+            ))}
+          </div>
+          <p className="text-center text-white/40 text-sm italic font-medium mt-16 max-w-2xl mx-auto">
+            Organized by the CSB Convention Secretariat in collaboration with international trade councils and government agencies.
+          </p>
+        </div>
+
+        {/* Previous Editions / Impact */}
+        <div className="reveal text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-white leading-none italic">Our Impact</h2>
+          <p className="text-white/40 text-xl font-medium italic max-w-3xl mx-auto mb-20 leading-relaxed">
+            Building on the success of previous editions, AEEE has facilitated over $500M in cross-border investment and connected 1,000+ businesses across continents.
+          </p>
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { value: "$500M+", label: "Investment Facilitated" },
+              { value: "1,000+", label: "Business Connections" },
+              { value: "15+", label: "Nations Impacted" }
+            ].map((stat, i) => (
+              <div key={i} className="space-y-2">
+                <div className="text-6xl font-black text-brand-coral tracking-tighter">{stat.value}</div>
+                <div className="text-[11px] font-bold tracking-tight text-white/40 italic">{stat.label}</div>
               </div>
             ))}
           </div>
