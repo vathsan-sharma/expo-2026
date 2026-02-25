@@ -54,12 +54,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="flex flex-col leading-none">
-              <span className="text-xl font-black text-white tracking-tighter group-hover:text-brand-coral transition-colors">
-                AEEE <span className="text-brand-coral group-hover:text-white">2026</span>
-              </span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
+              alt="AEEE 2026 Logo" 
+              className="h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
           </Link>
 
           {/* Navigation - Centered */}
@@ -105,6 +106,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           }`}
           style={{ top: '0', left: '0', width: '100%', height: '100vh' }}
         >
+          <div className="absolute top-8 left-8">
+            <img 
+              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
+              alt="AEEE 2026 Logo" 
+              className="h-16 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </div>
           <button 
             className="absolute top-8 right-8 p-4 text-white hover:text-brand-coral transition-colors"
             onClick={() => setIsMenuOpen(false)}
@@ -170,15 +179,16 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
 
           <div className="flex flex-col items-center text-center space-y-12 mb-16">
-            <Link to="/" className="flex flex-col items-center space-y-2 group">
-              <div className="flex flex-col leading-none items-center">
-                <span className="text-4xl font-black text-white tracking-tighter">
-                  AEEE <span className="text-brand-coral">2026</span>
-                </span>
-                <span className="text-[10px] text-white/60 font-bold tracking-[0.2em]">
-                  Asia's Emerging Economies Expo
-                </span>
-              </div>
+            <Link to="/" className="flex flex-col items-center group">
+              <img 
+                src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
+                alt="AEEE 2026 Logo" 
+                className="h-32 w-auto object-contain mb-4 transition-transform group-hover:scale-105"
+                referrerPolicy="no-referrer"
+              />
+              <span className="text-[10px] text-white/60 font-bold tracking-[0.2em] uppercase">
+                Asia's Emerging Economies Expo
+              </span>
             </Link>
 
             <div className="flex space-x-6">

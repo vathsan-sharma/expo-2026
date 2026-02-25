@@ -41,9 +41,9 @@ const Home: React.FC = () => {
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-coral/20 blur-[120px] rounded-full animate-pulse-slow"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-20 w-full py-20">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7 animate-fade-in-up">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-20 w-full py-20">
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-8 animate-fade-in-up">
               <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-10 reveal">
                 <span className="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></span>
                 <span className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em] italic">October 15-17, 2026 • Toronto</span>
@@ -70,49 +70,49 @@ const Home: React.FC = () => {
               </div>
             </div>
             
-            <div className="lg:col-span-5 reveal mt-12 lg:mt-0">
-              <div className="bg-brand-navy/80 backdrop-blur-2xl p-8 md:p-12 border border-white/20 space-y-12 relative overflow-hidden bg-dots rounded-3xl shadow-2xl">
-                <div className="absolute -top-24 -right-24 opacity-10">
-                  <Globe className="w-64 h-64 text-white" />
+            <div className="lg:col-span-4 reveal mt-12 lg:mt-0">
+              <div className="bg-brand-navy/60 backdrop-blur-xl p-6 md:p-8 border border-white/10 space-y-8 relative overflow-hidden bg-dots rounded-3xl shadow-2xl max-w-sm ml-auto">
+                <div className="absolute -top-16 -right-16 opacity-10">
+                  <Globe className="w-48 h-48 text-white" />
                 </div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-8">
-                    <h4 className="text-xs font-black text-brand-coral uppercase tracking-[0.4em] italic">Event Details</h4>
-                    <div className="px-4 py-2 bg-brand-coral text-white border border-brand-coral/20 rounded-full text-[10px] font-black uppercase italic shadow-lg">Live Countdown</div>
+                  <div className="flex items-center justify-between mb-6">
+                    <h4 className="text-[10px] font-black text-brand-coral uppercase tracking-[0.4em] italic">Event Details</h4>
+                    <div className="px-3 py-1.5 bg-brand-coral text-white border border-brand-coral/20 rounded-full text-[8px] font-black uppercase italic shadow-lg">Live Countdown</div>
                   </div>
                   
-                  <div className="space-y-8">
-                    <div className="flex items-center gap-6 group">
-                      <div className="w-14 h-14 rounded-2xl bg-brand-coral flex items-center justify-center text-white transition-all shadow-xl">
-                        <Calendar className="w-6 h-6" />
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-4 group">
+                      <div className="w-10 h-10 rounded-xl bg-brand-coral flex items-center justify-center text-white transition-all shadow-xl">
+                        <Calendar className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-[10px] text-white/50 font-bold uppercase tracking-widest italic mb-1">Date</div>
-                        <span className="text-white font-black tracking-tight italic text-xl">Oct 15-17, 2026</span>
+                        <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic mb-0.5">Date</div>
+                        <span className="text-white font-black tracking-tight italic text-base">Oct 15-17, 2026</span>
                       </div>
                     </div>
-                    <div className="flex items-center gap-6 group">
-                      <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-coral group-hover:bg-brand-coral group-hover:text-white transition-all shadow-inner">
-                        <MapPin className="w-6 h-6" />
+                    <div className="flex items-center gap-4 group">
+                      <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-coral group-hover:bg-brand-coral group-hover:text-white transition-all shadow-inner">
+                        <MapPin className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="text-[10px] text-white/50 font-bold uppercase tracking-widest italic mb-1">Venue</div>
-                        <span className="text-white font-black tracking-tight italic text-xl">Enercare Centre, Toronto</span>
+                        <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic mb-0.5">Venue</div>
+                        <span className="text-white font-black tracking-tight italic text-base leading-tight">Enercare Centre, Toronto</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-10 border-t border-white/10 relative z-10">
-                  <div className="grid grid-cols-2 gap-10">
-                    <div className="space-y-2">
-                      <div className="text-4xl font-black text-white italic tracking-tighter">300+</div>
-                      <div className="text-[10px] text-white/50 font-bold uppercase tracking-widest italic">Exhibitors</div>
+                <div className="pt-6 border-t border-white/10 relative z-10">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="space-y-1">
+                      <div className="text-2xl font-black text-white italic tracking-tighter">300+</div>
+                      <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic">Exhibitors</div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="text-4xl font-black text-white italic tracking-tighter">50k+</div>
-                      <div className="text-[10px] text-white/50 font-bold uppercase tracking-widest italic">Visitors</div>
+                    <div className="space-y-1">
+                      <div className="text-2xl font-black text-white italic tracking-tighter">50k+</div>
+                      <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic">Visitors</div>
                     </div>
                   </div>
                 </div>
@@ -313,7 +313,7 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="reveal relative aspect-square rounded-sm overflow-hidden border border-white/10 group hidden lg:block">
-              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Experience" />
+              <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Experience" />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-60"></div>
             </div>
             <div className="reveal">
@@ -369,7 +369,7 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="reveal relative aspect-square rounded-sm overflow-hidden border border-white/10">
-              <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale opacity-40" alt="Conference" />
+              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale opacity-40" alt="Conference" />
             </div>
           </div>
         </div>

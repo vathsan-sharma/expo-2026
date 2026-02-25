@@ -114,12 +114,12 @@ export const COUNTRIES: Country[] = [
 ];
 
 export const PARTNER_SKYLINES: Record<string, string> = {
-  canada: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&q=80&w=1200",
-  srilanka: "https://images.unsplash.com/photo-1529154036614-a60975f5c760?auto=format&fit=crop&q=80&w=1200",
-  indonesia: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=1200",
-  thailand: "https://images.unsplash.com/photo-1501179691627-eeaa65ea017c?auto=format&fit=crop&q=80&w=1200",
-  pakistan: "https://images.unsplash.com/photo-1569330112438-3b90189a8ce1?auto=format&fit=crop&q=80&w=1200",
-  vietnam: "https://images.unsplash.com/photo-1509030450996-93f25ef2499a?auto=format&fit=crop&q=80&w=1200",
+  canada: "https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&q=80&w=1200",
+  srilanka: "https://raw.githubusercontent.com/vathsan-sharma/imagess/main/pexels-chathura-anuradha-subasinghe-599124-12781425.jpg",
+  indonesia: "https://images.unsplash.com/photo-1505993597083-3bd19fb75e57?auto=format&fit=crop&q=80&w=1200",
+  thailand: "https://raw.githubusercontent.com/vathsan-sharma/imagess/main/pexels-pixabay-208444.jpg",
+  pakistan: "https://raw.githubusercontent.com/vathsan-sharma/imagess/main/pexels-salman-rafique-2545763-11784631.jpg",
+  vietnam: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&q=80&w=1200",
   philippines: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&q=80&w=1200",
   malaysia: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200"
 };
