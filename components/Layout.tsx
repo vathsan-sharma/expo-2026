@@ -48,17 +48,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <header 
         className={`fixed top-6 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] max-w-[1200px] ${
           isScrolled 
-            ? 'bg-brand-navy/80 backdrop-blur-xl border border-white/10 py-2 px-6 rounded-full shadow-2xl' 
-            : 'bg-brand-navy/40 backdrop-blur-md border border-white/5 py-3 px-8 rounded-2xl'
+            ? 'bg-white/90 backdrop-blur-xl border border-black/10 py-2 px-6 rounded-full shadow-2xl' 
+            : 'bg-white/70 backdrop-blur-md border border-black/5 py-3 px-8 rounded-2xl'
         }`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
-              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
+              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29).png" 
               alt="AEEE 2026 Logo" 
-              className="h-24 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-16 w-auto object-contain transition-transform group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
           </Link>
@@ -70,7 +70,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 key={item.path} 
                 to={item.path}
                 className={`text-[11px] font-bold uppercase tracking-widest transition-all duration-300 relative group/nav ${
-                  location.pathname === item.path ? 'text-brand-coral' : 'text-white/60 hover:text-white'
+                  location.pathname === item.path ? 'text-brand-coral' : 'text-brand-navy/60 hover:text-brand-navy'
                 }`}
               >
                 {item.label}
@@ -85,13 +85,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex items-center space-x-4">
             <Link 
               to="/registration" 
-              className="bg-brand-coral text-white px-5 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-lg rounded-full"
+              className="bg-brand-coral text-white px-5 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-lg rounded-full"
             >
               Register
             </Link>
 
             <button 
-              className="lg:hidden p-2 text-white hover:text-brand-coral transition-colors" 
+              className="lg:hidden p-2 text-brand-navy hover:text-brand-coral transition-colors" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -108,7 +108,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         >
           <div className="absolute top-8 left-8">
             <img 
-              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
+              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29).png" 
               alt="AEEE 2026 Logo" 
               className="h-16 w-auto object-contain"
               referrerPolicy="no-referrer"
@@ -181,7 +181,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex flex-col items-center text-center space-y-12 mb-16">
             <Link to="/" className="flex flex-col items-center group">
               <img 
-                src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
+                src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29).png" 
                 alt="AEEE 2026 Logo" 
                 className="h-32 w-auto object-contain mb-4 transition-transform group-hover:scale-105"
                 referrerPolicy="no-referrer"

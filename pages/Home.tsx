@@ -21,109 +21,106 @@ const Home: React.FC = () => {
 
   return (
     <div className="overflow-hidden bg-brand-navy">
-      {/* 3.1 Enhanced Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-brand-navy pt-32">
-        {/* Background Visual - Full Screen Video */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-brand-navy/20 z-10"></div>
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover opacity-40 lg:opacity-60"
-          >
-            <source src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/14917537_1920_1080_30fps.mp4" type="video/mp4" />
-            <img src="https://images.unsplash.com/photo-1540575861501-7ad05823c95b?auto=format&fit=crop&q=80&w=2000" className="w-full h-full object-cover" alt="Hero" />
-          </video>
-          {/* Floating Elements */}
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-brand-coral/20 blur-[120px] rounded-full animate-pulse-slow"></div>
-        </div>
+      {/* 3.1 Refined Hero Section */}
+      <section className="relative pt-32 pb-12 bg-brand-navy">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <div className="relative aspect-video md:aspect-[21/9] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group">
+            {/* Background Visual - Contained Video */}
+            <div className="absolute inset-0 z-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/40 to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/60 via-transparent to-transparent z-10"></div>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline 
+                className="w-full h-full object-cover opacity-80 transition-transform duration-1000 group-hover:scale-105"
+              >
+                <source src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Philippines%20(1).mp4" type="video/mp4" />
+              </video>
+            </div>
 
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 relative z-20 w-full py-20">
-          <div className="grid lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-8 animate-fade-in-up">
-              <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-10 reveal">
-                <span className="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></span>
-                <span className="text-[10px] font-black text-white/60 uppercase tracking-[0.3em] italic">October 15-17, 2026 • Toronto</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-10 tracking-tighter italic">
-                Asia's <br/>
-                <span className="text-brand-coral">Emerging</span> <br/>
-                Economies
-              </h1>
-              
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-10 reveal">
-                <p className="text-lg md:text-xl text-white/40 font-medium italic max-w-md leading-relaxed">
-                  The definitive gateway to Asia's expansion in North America. Connecting global capital with high-growth innovation in the heart of Toronto.
+            {/* Content Overlay */}
+            <div className="absolute inset-0 z-20 flex flex-col justify-center px-8 md:px-16 lg:px-24">
+              <div className="max-w-3xl animate-fade-in-up">
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-brand-coral/20 backdrop-blur-md border border-brand-coral/30 rounded-full mb-8 reveal">
+                  <span className="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></span>
+                  <span className="text-[10px] font-black text-white uppercase tracking-[0.3em] italic">October 15-17, 2026 • Toronto</span>
+                </div>
+                
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 tracking-tighter italic">
+                  The Gateway to <br/>
+                  <span className="text-brand-coral">Emerging Economies</span> <br/>
+                  in North America
+                </h1>
+                
+                <p className="text-base md:text-lg text-white/70 font-medium italic max-w-xl leading-relaxed mb-10 reveal">
+                  Connecting global capital with high-growth innovation. Experience the definitive platform for cross-border expansion in the heart of Toronto.
                 </p>
-                <div className="flex flex-col gap-4 w-full md:w-auto">
-                   <Link to="/registration" className="bg-brand-coral text-white px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-2xl italic flex items-center justify-center gap-4 group">
+
+                <div className="flex flex-col sm:flex-row gap-4 reveal">
+                   <Link to="/registration" className="bg-brand-coral text-white px-8 py-4 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-xl italic flex items-center justify-center gap-3 group">
                     Secure Your Pass <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </Link>
-                  <Link to="/exhibitors" className="text-white/30 hover:text-white font-bold text-[10px] uppercase tracking-[0.3em] italic transition-colors text-center">
+                  <Link to="/exhibitors" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-black text-[11px] uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all italic flex items-center justify-center">
                     Become an Exhibitor
                   </Link>
                 </div>
               </div>
             </div>
-            
-            <div className="lg:col-span-4 reveal mt-12 lg:mt-0">
-              <div className="bg-brand-navy/60 backdrop-blur-xl p-6 md:p-8 border border-white/10 space-y-8 relative overflow-hidden bg-dots rounded-3xl shadow-2xl max-w-sm ml-auto">
-                <div className="absolute -top-16 -right-16 opacity-10">
-                  <Globe className="w-48 h-48 text-white" />
-                </div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-[10px] font-black text-brand-coral uppercase tracking-[0.4em] italic">Event Details</h4>
-                    <div className="px-3 py-1.5 bg-brand-coral text-white border border-brand-coral/20 rounded-full text-[8px] font-black uppercase italic shadow-lg">Live Countdown</div>
-                  </div>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-center gap-4 group">
-                      <div className="w-10 h-10 rounded-xl bg-brand-coral flex items-center justify-center text-white transition-all shadow-xl">
-                        <Calendar className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic mb-0.5">Date</div>
-                        <span className="text-white font-black tracking-tight italic text-base">Oct 15-17, 2026</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 group">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-coral group-hover:bg-brand-coral group-hover:text-white transition-all shadow-inner">
-                        <MapPin className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic mb-0.5">Venue</div>
-                        <span className="text-white font-black tracking-tight italic text-base leading-tight">Enercare Centre, Toronto</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="pt-6 border-t border-white/10 relative z-10">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div className="space-y-1">
-                      <div className="text-2xl font-black text-white italic tracking-tighter">300+</div>
-                      <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic">Exhibitors</div>
-                    </div>
-                    <div className="space-y-1">
-                      <div className="text-2xl font-black text-white italic tracking-tighter">50k+</div>
-                      <div className="text-[9px] text-white/50 font-bold uppercase tracking-widest italic">Visitors</div>
-                    </div>
+            {/* Floating Badge */}
+            <div className="absolute bottom-8 right-8 z-30 hidden lg:block reveal">
+              <div className="bg-brand-navy/80 backdrop-blur-xl border border-white/10 p-4 rounded-2xl flex items-center gap-4 shadow-2xl">
+                <div className="w-12 h-12 rounded-xl bg-brand-coral/20 flex items-center justify-center text-brand-coral">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-white/40 font-black uppercase tracking-widest italic">Participating</div>
+                  <div className="text-sm font-black text-white italic tracking-tight">8 Powerful Economies</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Event Quick Info Bar */}
+      <section className="relative z-30 -mt-12 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-brand-navy/80 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-8 md:p-12 overflow-hidden relative group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-coral/10 blur-[100px] rounded-full -z-10"></div>
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+              <div className="flex items-center gap-6 reveal">
+                <div className="w-16 h-16 rounded-2xl bg-brand-coral flex items-center justify-center text-white shadow-xl">
+                  <Calendar className="w-8 h-8" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-white/40 font-black uppercase tracking-[0.3em] italic mb-1">Event Date</div>
+                  <div className="text-xl font-black text-white tracking-tight italic">October 15-17, 2026</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-6 reveal">
+                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-coral shadow-xl">
+                  <MapPin className="w-8 h-8" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-white/40 font-black uppercase tracking-[0.3em] italic mb-1">Venue</div>
+                  <div className="text-xl font-black text-white tracking-tight italic">Enercare Centre, Toronto</div>
+                </div>
+              </div>
+              <div className="flex items-center justify-end reveal">
+                <div className="text-right">
+                  <div className="text-[10px] text-white/40 font-black uppercase tracking-[0.3em] italic mb-2">Registration Status</div>
+                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-coral/10 border border-brand-coral/20 rounded-full">
+                    <span className="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></span>
+                    <span className="text-xs font-black text-brand-coral uppercase italic">Now Open</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Decorative Blur */}
-        <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-brand-coral/5 blur-[180px] rounded-full -z-10"></div>
-        <div className="absolute top-0 left-0 w-1/4 h-1/4 bg-brand-coral/5 blur-[150px] rounded-full -z-10"></div>
       </section>
 
       {/* About / Event Snapshot */}
@@ -137,7 +134,7 @@ const Home: React.FC = () => {
               </p>
               <div className="space-y-6">
                 {[
-                  "Direct access to 8 emerging Asian economies under one roof.",
+                  "Direct access to 8 powerful economies under one roof.",
                   "Strategic B2B matchmaking with pre-qualified trade delegations.",
                   "High-level policy dialogues featuring ministerial representatives.",
                   "Showcase of disruptive technologies in Fintech, Energy, and AI."
