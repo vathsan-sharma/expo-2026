@@ -46,36 +46,38 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="flex flex-col min-h-screen bg-brand-navy">
       {/* Header */}
       <header 
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] max-w-[1200px] ${
+        className={`fixed top-6 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] max-w-[1400px] ${
           isScrolled 
-            ? 'bg-white/90 backdrop-blur-xl border border-black/10 py-2 px-6 rounded-full shadow-2xl' 
-            : 'bg-white/70 backdrop-blur-md border border-black/5 py-3 px-8 rounded-2xl'
+            ? 'bg-brand-navy/60 backdrop-blur-2xl border border-white/10 py-2 px-6 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)]' 
+            : 'bg-brand-navy/20 backdrop-blur-md border border-white/5 py-4 px-10 rounded-3xl'
         }`}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
-              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29).png" 
+              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
               alt="AEEE 2026 Logo" 
-              className="h-16 w-auto object-contain transition-transform group-hover:scale-105"
+              className={`w-auto object-contain transition-all duration-500 group-hover:scale-105 ${
+                isScrolled ? 'h-16' : 'h-24'
+              }`}
               referrerPolicy="no-referrer"
             />
           </Link>
 
           {/* Navigation - Centered */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {navItems.map((item) => (
               <Link 
                 key={item.path} 
                 to={item.path}
-                className={`text-[11px] font-bold uppercase tracking-widest transition-all duration-300 relative group/nav ${
-                  location.pathname === item.path ? 'text-brand-coral' : 'text-brand-navy/60 hover:text-brand-navy'
+                className={`px-3 py-2 text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative group/nav italic ${
+                  location.pathname === item.path ? 'text-brand-coral' : 'text-white/50 hover:text-white'
                 }`}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-coral transition-all duration-300 group-hover/nav:w-full ${
-                  location.pathname === item.path ? 'w-full' : ''
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-coral rounded-full transition-all duration-300 ${
+                  location.pathname === item.path ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover/nav:opacity-50 group-hover/nav:scale-100'
                 }`}></span>
               </Link>
             ))}
@@ -85,60 +87,74 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex items-center space-x-4">
             <Link 
               to="/registration" 
-              className="bg-brand-coral text-white px-5 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-lg rounded-full"
+              className="relative group overflow-hidden bg-brand-coral text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full shadow-[0_10px_20px_rgba(242,125,38,0.3)] hover:shadow-[0_15px_30px_rgba(242,125,38,0.5)] transition-all italic"
             >
-              Register
+              <span className="relative z-10">Register</span>
+              <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+              <span className="absolute inset-0 flex items-center justify-center text-brand-coral translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-black z-20">Register</span>
             </Link>
 
             <button 
-              className="lg:hidden p-2 text-brand-navy hover:text-brand-coral transition-colors" 
+              className="lg:hidden p-2 text-white hover:text-brand-coral transition-colors" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`fixed inset-0 bg-brand-navy/95 backdrop-blur-2xl z-[99] lg:hidden flex flex-col items-center justify-center space-y-6 transition-all duration-500 rounded-3xl ${
-            isMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+          className={`fixed inset-0 bg-brand-navy/98 backdrop-blur-3xl z-[99] lg:hidden flex flex-col transition-all duration-700 ${
+            isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
           }`}
           style={{ top: '0', left: '0', width: '100%', height: '100vh' }}
         >
-          <div className="absolute top-8 left-8">
+          <div className="flex items-center justify-between p-8">
             <img 
-              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29).png" 
+              src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
               alt="AEEE 2026 Logo" 
               className="h-16 w-auto object-contain"
               referrerPolicy="no-referrer"
             />
-          </div>
-          <button 
-            className="absolute top-8 right-8 p-4 text-white hover:text-brand-coral transition-colors"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <X className="w-8 h-8" />
-          </button>
-          {navItems.map((item) => (
-            <Link 
-              key={item.path} 
-              to={item.path}
-              className={`text-2xl font-black tracking-tighter uppercase transition-colors italic ${
-                location.pathname === item.path ? 'text-brand-coral' : 'text-white'
-              }`}
+            <button 
+              className="p-4 text-white hover:text-brand-coral transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              {item.label}
+              <X className="w-8 h-8" />
+            </button>
+          </div>
+
+          <div className="flex-grow flex flex-col items-center justify-center space-y-4 px-8">
+            {navItems.map((item, idx) => (
+              <Link 
+                key={item.path} 
+                to={item.path}
+                className={`text-3xl font-black tracking-tighter uppercase transition-all duration-500 italic hover:text-brand-coral ${
+                  location.pathname === item.path ? 'text-brand-coral translate-x-4' : 'text-white'
+                }`}
+                style={{ transitionDelay: `${idx * 50}ms` }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link 
+              to="/registration"
+              className="mt-12 bg-brand-coral text-white px-12 py-5 font-black text-sm uppercase tracking-[0.3em] rounded-full shadow-2xl italic"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Secure Your Pass
             </Link>
-          ))}
-          <Link 
-            to="/registration"
-            className="mt-8 bg-brand-coral text-white px-10 py-4 font-black text-xs uppercase tracking-[0.2em] rounded-full"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Register Now
-          </Link>
+          </div>
+
+          <div className="p-12 border-t border-white/5 flex justify-center space-x-8">
+            {socialLinks.map((social, idx) => (
+              <a key={idx} href={social.href} className="text-white/40 hover:text-brand-coral transition-colors">
+                {social.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </header>
 
@@ -181,7 +197,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           <div className="flex flex-col items-center text-center space-y-12 mb-16">
             <Link to="/" className="flex flex-col items-center group">
               <img 
-                src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29).png" 
+                src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
                 alt="AEEE 2026 Logo" 
                 className="h-32 w-auto object-contain mb-4 transition-transform group-hover:scale-105"
                 referrerPolicy="no-referrer"
