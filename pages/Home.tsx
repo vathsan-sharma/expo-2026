@@ -5,7 +5,7 @@ import {
   ArrowRight, Users, BarChart3, Mic2, Star, 
   Calendar, MapPin, Globe, Briefcase, LayoutGrid, 
   Zap, Presentation, MessageSquare, ChevronRight,
-  Target, Eye
+  Target, Eye, TrendingUp
 } from 'lucide-react';
 import { COUNTRIES, SECTORS, EXPERIENCE_FEATURES, PARTNER_SKYLINES, SECTOR_IMAGES, IMPACT_STATS, SPEAKERS, TESTIMONIALS } from '../constants';
 
@@ -492,42 +492,58 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* 10. Testimonials Section - New */}
-      <section className="py-32 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* 10. Strategic Roadmap Section */}
+      <section className="py-40 bg-brand-navy border-t border-white/5 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-coral/5 blur-[150px] rounded-full pointer-events-none"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="text-center mb-32"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8">What People <span className="text-brand-coral">Say</span></h2>
+            <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block uppercase">The Journey</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none mb-8 uppercase">Strategic <span className="text-brand-coral">Roadmap</span></h2>
+            <p className="text-white/40 text-xl font-medium max-w-3xl mx-auto">
+              A meticulously planned three-day journey designed to maximize value for every participant.
+            </p>
           </motion.div>
-          <div className="max-w-4xl mx-auto">
-            {TESTIMONIALS.map((t, i) => (
+
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              {
+                day: "01",
+                title: "Innovation & Insight",
+                desc: "Focusing on emerging technologies and market intelligence from Asia's top tech hubs.",
+                icon: <Zap className="w-8 h-8" />
+              },
+              {
+                day: "02",
+                title: "Trade & Connectivity",
+                desc: "Direct B2B matching and high-level ministerial dialogues to catalyze trade agreements.",
+                icon: <Globe className="w-8 h-8" />
+              },
+              {
+                day: "03",
+                title: "Investment & Future",
+                desc: "Venture capital showcases and long-term strategic partnership announcements.",
+                icon: <TrendingUp className="w-8 h-8" />
+              }
+            ].map((item, i) => (
               <motion.div 
-                key={i} 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="p-16 border border-white/10 text-center space-y-10 bg-white/5 relative overflow-hidden rounded-sm"
+                transition={{ delay: i * 0.2 }}
+                className="relative p-12 bg-white/5 border border-white/10 rounded-sm group hover:border-brand-coral transition-all"
               >
-                <div className="absolute top-0 left-0 p-12 text-white/5 font-black text-9xl pointer-events-none">"</div>
-                <p className="text-2xl md:text-3xl text-white font-medium leading-relaxed relative z-10">
-                  {t.quote}
-                </p>
-                <div className="flex flex-col items-center gap-4 relative z-10">
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-coral shadow-xl"
-                  >
-                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
-                  </motion.div>
-                  <div>
-                    <h4 className="text-xl font-black text-white tracking-tighter">{t.name}</h4>
-                    <div className="text-brand-coral font-bold text-xs tracking-tight">{t.role}, {t.company}</div>
-                  </div>
+                <div className="text-brand-coral font-black text-6xl opacity-10 absolute top-8 right-8 group-hover:opacity-20 transition-opacity">DAY {item.day}</div>
+                <div className="w-16 h-16 bg-brand-coral/10 border border-brand-coral/20 rounded-sm flex items-center justify-center text-brand-coral mb-10 group-hover:bg-brand-coral group-hover:text-white transition-all">
+                  {item.icon}
                 </div>
+                <h4 className="text-2xl font-black text-white tracking-tighter mb-6 uppercase leading-none">{item.title}</h4>
+                <p className="text-white/40 text-sm font-medium leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
