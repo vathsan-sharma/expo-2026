@@ -151,7 +151,7 @@ const Home: React.FC = () => {
             {IMPACT_STATS.map((stat, i) => (
               <div key={i} className="reveal glass-card p-12 border border-white/10 text-center space-y-6 group hover:border-brand-coral transition-all bg-white/5">
                 <div className="text-brand-coral group-hover:scale-110 transition-transform">{React.cloneElement(stat.icon as React.ReactElement, { className: 'w-12 h-12 mx-auto' })}</div>
-                <div className="text-6xl font-black text-white tracking-tighter italic">
+                <div className="text-4xl md:text-5xl font-black text-white tracking-tighter italic">
                   <CountUp end={stat.value} />
                 </div>
                 <div className="text-sm font-black tracking-[0.2em] text-brand-coral uppercase italic">{stat.label}</div>
@@ -181,13 +181,9 @@ const Home: React.FC = () => {
               <Link 
                 key={country.id} 
                 to="/countries" 
-                className={`reveal group relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-brand-coral transition-all duration-700 shadow-2xl ${
-                  i % 2 === 0 ? 'hover:-translate-x-4' : 'hover:translate-x-4'
-                }`}
+                className={`reveal group relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-brand-coral transition-all duration-700 shadow-2xl`}
                 style={{ 
-                  transitionDelay: `${i * 100}ms`,
-                  transform: i % 2 === 0 ? 'translateX(20px)' : 'translateX(-20px)',
-                  opacity: 0
+                  transitionDelay: `${i * 100}ms`
                 }}
               >
                 <img 
