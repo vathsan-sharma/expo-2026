@@ -1,78 +1,121 @@
-import React, { useEffect } from 'react';
-import { SECTORS } from '../constants';
+import React from 'react';
+import { SECTORS, SECTOR_IMAGES } from '../constants';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const TargetSectors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
-      {/* Header */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-dots opacity-10"></div>
+      {/* Professional Header */}
+      <section className="relative pt-48 pb-32 w-full flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-brand-navy"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(242,125,38,0.1),transparent_70%)]"></div>
+          <div className="absolute inset-0 bg-dots opacity-5"></div>
+        </div>
+        
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-7xl mx-auto px-6 relative z-10"
+          transition={{ duration: 1 }}
+          className="relative z-10 max-w-5xl mx-auto px-6 text-center"
         >
-          <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Economic Engines</span>
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Target Sectors</h1>
-          <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            Focusing on the high growth industries that define the future of the Asia Canada trade corridor.
+          <span className="text-brand-coral font-bold tracking-[0.5em] text-xs mb-8 block uppercase">Strategic Economic Engines</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-white mb-10 tracking-tighter leading-[0.9] uppercase">
+            Industry <span className="text-brand-coral">Sectors</span>
+          </h1>
+          <p className="text-white/60 text-lg md:text-2xl max-w-3xl mx-auto font-medium leading-relaxed">
+            Catalyzing growth across the most dynamic industries in the Asia-Canada trade corridor.
           </p>
         </motion.div>
       </section>
 
-      {/* Sectors Grid - Editorial Layout */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 gap-px bg-white/10 border border-white/10 overflow-hidden rounded-sm">
+      {/* Modern Grid Layout - Website Friendly */}
+      <section className="max-w-7xl mx-auto px-6 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SECTORS.map((sector, idx) => (
             <motion.div 
               key={sector.id} 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: (idx % 2) * 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="group relative bg-white/5 border border-white/10 rounded-3xl overflow-hidden flex flex-col h-full hover:border-brand-coral/50 transition-all duration-500"
             >
-              <div className="bg-brand-navy p-12 md:p-20 flex flex-col md:flex-row items-center gap-16 group hover:bg-white/5 transition-all duration-700">
-                <div className="text-white/10 font-black text-7xl md:text-9xl italic tracking-tighter group-hover:text-brand-coral/20 transition-colors">
-                  0{idx + 1}
+              {/* Image Header with Overlay */}
+              <div className="relative h-56 overflow-hidden">
+                <img 
+                  src={SECTOR_IMAGES[sector.id as keyof typeof SECTOR_IMAGES]} 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                  alt={sector.title}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/20 to-transparent"></div>
+                
+                {/* Minimal Icon Overlay */}
+                <div className="absolute bottom-4 left-4 w-12 h-12 bg-brand-coral/90 backdrop-blur-xl rounded-xl flex items-center justify-center text-white shadow-2xl z-20">
+                  {React.cloneElement(sector.icon as React.ReactElement, { className: 'w-6 h-6' })}
                 </div>
-                <div className="w-24 h-24 bg-white/5 rounded-sm flex items-center justify-center flex-shrink-0 group-hover:bg-brand-coral group-hover:text-white transition-all duration-700 shadow-sm">
-                  {React.cloneElement(sector.icon as React.ReactElement, { className: 'w-12 h-12' })}
-                </div>
-                <div className="flex-grow text-center md:text-left">
-                  <h3 className="text-4xl md:text-5xl font-black tracking-tighter text-white leading-none italic mb-8 group-hover:translate-x-4 transition-transform duration-700">{sector.title}</h3>
-                  <motion.p 
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="text-white/40 text-xl font-medium mb-12 leading-relaxed italic border-l-4 border-brand-coral/20 pl-8"
-                  >
-                    {sector.description}
-                  </motion.p>
-                  <div className="space-y-6">
-                    <h4 className="text-[11px] font-bold text-brand-coral tracking-tight mb-4 italic uppercase">Core Sub-Sectors</h4>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {sector.subsectors?.map((sub, sIdx) => (
-                        <motion.li 
-                          key={sIdx} 
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: sIdx * 0.1 }}
-                          className="flex items-center gap-4 text-xs font-bold tracking-tight text-white/40 group-hover:text-white group-hover:translate-x-4 transition-all duration-500 italic"
-                        >
-                          <ChevronRight className="w-4 h-4 text-brand-coral" /> {sub}
-                        </motion.li>
-                      ))}
-                    </ul>
+              </div>
+
+              {/* Content */}
+              <div className="p-8 flex-grow flex flex-col">
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-px bg-brand-coral"></div>
+                    <span className="text-brand-coral font-bold text-[10px] tracking-[0.3em] uppercase">Priority Sector</span>
                   </div>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tighter leading-none uppercase">
+                    {sector.title}
+                  </h2>
+                </div>
+
+                <p className="text-white/60 text-sm md:text-base font-medium leading-relaxed mb-8 line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+                  {sector.description}
+                </p>
+
+                <div className="space-y-4 flex-grow">
+                  <div className="flex flex-wrap gap-2">
+                    {sector.subsectors?.map((sub, sIdx) => (
+                      <span key={sIdx} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-white/40 group-hover:text-white group-hover:border-brand-coral/30 transition-all">
+                        {sub}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-8 mt-auto">
+                  <Link to="/registration" className="inline-flex items-center gap-2 text-brand-coral font-black text-[10px] tracking-widest hover:text-white transition-all uppercase group/link">
+                    Explore Opportunities <ArrowRight className="w-3 h-3 group-hover/link:translate-x-2 transition-transform" />
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Call to Action - Clean & Open */}
+      <section className="py-48 max-w-5xl mx-auto px-6 text-center">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="space-y-12"
+        >
+           <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase">Ready to <span className="text-brand-coral">Expand?</span></h3>
+           <p className="text-white/40 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
+             Join 300+ exhibitors and 50,000+ attendees in the heart of Toronto to redefine your global strategy.
+           </p>
+           <div className="flex flex-col sm:flex-row gap-6 justify-center">
+             <Link to="/registration" className="bg-brand-coral text-white px-12 py-5 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-2xl uppercase">
+               Register Now
+             </Link>
+             <Link to="/exhibitors" className="bg-white/10 border border-white/20 text-white px-12 py-5 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-brand-navy transition-all uppercase">
+               Exhibitor Info
+             </Link>
+           </div>
+        </motion.div>
       </section>
     </div>
   );
