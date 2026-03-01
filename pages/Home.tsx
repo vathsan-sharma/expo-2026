@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { 
   ArrowRight, Users, BarChart3, Mic2, Star, 
   Calendar, MapPin, Globe, Briefcase, LayoutGrid, 
@@ -10,10 +11,13 @@ import { COUNTRIES, SECTORS, EXPERIENCE_FEATURES, PARTNER_SKYLINES, SECTOR_IMAGE
 
 const CountUp: React.FC<{ end: string, duration?: number }> = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
   const numericValue = parseInt(end.replace(/[^0-9]/g, ''));
   const suffix = end.replace(/[0-9]/g, '');
 
   useEffect(() => {
+    if (!hasStarted) return;
+    
     let startTimestamp: number | null = null;
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
@@ -24,9 +28,16 @@ const CountUp: React.FC<{ end: string, duration?: number }> = ({ end, duration =
       }
     };
     window.requestAnimationFrame(step);
-  }, [numericValue, duration]);
+  }, [numericValue, duration, hasStarted]);
 
-  return <span>{count.toLocaleString()}{suffix}</span>;
+  return (
+    <motion.span 
+      onViewportEnter={() => setHasStarted(true)}
+      viewport={{ once: true }}
+    >
+      {count.toLocaleString()}{suffix}
+    </motion.span>
+  );
 };
 
 const Home: React.FC = () => {
@@ -62,34 +73,58 @@ const Home: React.FC = () => {
 
         {/* Content Overlay - Centered, Clean, and Professional */}
         <div className="relative z-20 w-full max-w-4xl mx-auto px-6 text-center pt-20">
-          <div className="animate-fade-in-up space-y-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="space-y-8"
+          >
             {/* Micro-label */}
-            <div className="reveal">
-              <span className="text-brand-coral font-bold text-xs md:text-sm tracking-[0.4em] italic uppercase opacity-90">
+            <motion.div
+              initial={{ opacity: 0, letterSpacing: "0.2em" }}
+              animate={{ opacity: 0.9, letterSpacing: "0.4em" }}
+              transition={{ duration: 1.5, delay: 0.2 }}
+            >
+              <span className="text-brand-coral font-bold text-xs md:text-sm tracking-[0.4em] italic uppercase">
                 The Global Trade Gateway
               </span>
-            </div>
+            </motion.div>
             
             {/* Impactful Headline - Sentence Case, Smaller for readability */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.2] tracking-tight reveal drop-shadow-2xl">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.2] tracking-tight drop-shadow-2xl"
+            >
               Asia's Emerging Economies Expo 2026
-            </h1>
+            </motion.h1>
 
             {/* Simple Subtext - Smaller for readability */}
-            <p className="text-white/80 text-base md:text-lg font-medium leading-relaxed reveal italic max-w-2xl mx-auto">
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.8 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="text-white/80 text-base md:text-lg font-medium leading-relaxed italic max-w-2xl mx-auto"
+            >
               Connecting global capital with high growth innovation in the heart of Toronto.
-            </p>
+            </motion.p>
             
             {/* Primary Actions */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6 reveal">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center pt-6"
+            >
                <Link to="/registration" className="bg-brand-coral text-white px-10 py-4 rounded-full font-bold text-sm hover:bg-white hover:text-brand-coral transition-all shadow-2xl flex items-center justify-center gap-3 group">
                 Secure your pass <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link to="/exhibitors" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-full font-bold text-sm hover:bg-white hover:text-brand-navy transition-all flex items-center justify-center">
                 Become an exhibitor
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Scroll Indicator */}
@@ -106,7 +141,12 @@ const Home: React.FC = () => {
       <section className="py-32 bg-brand-navy relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
-            <div className="reveal">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block italic uppercase">The Vision</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-10 italic">About <span className="text-brand-coral">AEEE 2026</span></h2>
               <p className="text-white/80 text-xl md:text-2xl leading-relaxed mb-12 font-medium italic">
@@ -116,46 +156,59 @@ const Home: React.FC = () => {
                 Hosted in Toronto, Canada's fastest growing tech and financial hub, the expo serves as a strategic bridge for businesses looking to navigate the complexities of international expansion and tap into the world's most dynamic growth engines.
               </p>
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="space-y-4 p-8 bg-white/5 border border-white/10 rounded-2xl group hover:border-brand-coral transition-all">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="space-y-4 p-8 bg-white/5 border border-white/10 rounded-2xl group hover:border-brand-coral transition-all"
+                >
                   <Target className="w-10 h-10 text-brand-coral" />
                   <h4 className="text-xl font-black text-white italic tracking-tight">Our Mission</h4>
                   <p className="text-white/40 text-sm italic font-medium leading-relaxed">facilitating high impact partnerships across the Asia Canada corridor.</p>
-                </div>
-                <div className="space-y-4 p-8 bg-white/5 border border-white/10 rounded-2xl group hover:border-brand-coral transition-all">
+                </motion.div>
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  className="space-y-4 p-8 bg-white/5 border border-white/10 rounded-2xl group hover:border-brand-coral transition-all"
+                >
                   <Eye className="w-10 h-10 text-brand-coral" />
                   <h4 className="text-xl font-black text-white italic tracking-tight">Our Vision</h4>
                   <p className="text-white/40 text-sm italic font-medium leading-relaxed">Leading platform for emerging market intelligence and collaboration.</p>
-                </div>
+                </motion.div>
               </div>
-            </div>
-            <div className="reveal relative">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
               <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                 <img src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/pexels-henri-mathieu-8349430.jpg" className="w-full h-full object-cover" alt="Expo Experience" />
               </div>
               <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-brand-coral/20 blur-[120px] rounded-full -z-10"></div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 5. Animated Numbers Section */}
-      <section className="py-32 bg-brand-navy border-t border-white/5">
+      {/* 5. Animated Numbers Section - Minimalist Redesign */}
+      <section className="py-40 bg-brand-navy border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24 reveal">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8 italic">Our <span className="text-brand-coral">Impact</span></h2>
-            <p className="text-white/40 text-xl font-medium italic max-w-3xl mx-auto">
-              Measuring the scale of Asia's premier emerging economies trade event.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-12 md:gap-0">
             {IMPACT_STATS.map((stat, i) => (
-              <div key={i} className="reveal glass-card p-12 border border-white/10 text-center space-y-6 group hover:border-brand-coral transition-all bg-white/5">
-                <div className="text-brand-coral group-hover:scale-110 transition-transform">{React.cloneElement(stat.icon as React.ReactElement, { className: 'w-12 h-12 mx-auto' })}</div>
-                <div className="text-4xl md:text-5xl font-black text-white tracking-tighter italic">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className={`text-center space-y-4 md:px-8 ${i !== IMPACT_STATS.length - 1 ? 'md:border-r border-white/10' : ''}`}
+              >
+                <div className="text-brand-coral/40 mb-4">{React.cloneElement(stat.icon as React.ReactElement, { className: 'w-8 h-8 mx-auto' })}</div>
+                <div className="text-5xl md:text-6xl font-black text-white tracking-tighter italic leading-none">
                   <CountUp end={stat.value} />
                 </div>
-                <div className="text-sm font-black tracking-[0.2em] text-brand-coral uppercase italic">{stat.label}</div>
-              </div>
+                <div className="text-[10px] font-bold tracking-[0.4em] text-white/40 uppercase italic">{stat.label}</div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -165,93 +218,126 @@ const Home: React.FC = () => {
       <section className="py-32 bg-brand-navy border-t border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-            <div className="reveal">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8 italic">Participating <br/><span className="text-brand-coral">Nations</span></h2>
               <p className="text-white/40 text-xl font-medium italic max-w-2xl">
                 A global showcase of Asia's most dynamic emerging economies alongside Canada's industrial strength.
               </p>
-            </div>
-            <Link to="/countries" className="reveal inline-flex items-center gap-4 text-brand-coral font-bold text-sm tracking-tight hover:text-white transition-colors italic">
+            </motion.div>
+            <Link to="/countries" className="inline-flex items-center gap-4 text-brand-coral font-bold text-sm tracking-tight hover:text-white transition-colors italic">
               View All Countries <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {COUNTRIES.slice(0, 8).map((country, i) => (
-              <Link 
-                key={country.id} 
-                to="/countries" 
-                className={`reveal group relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-brand-coral transition-all duration-700 shadow-2xl`}
-                style={{ 
-                  transitionDelay: `${i * 100}ms`
-                }}
+              <motion.div
+                key={country.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
               >
-                <img 
-                  src={PARTNER_SKYLINES[country.id as keyof typeof PARTNER_SKYLINES]} 
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
-                  alt={country.name}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
-                
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-4xl drop-shadow-2xl">{country.flag}</span>
-                    <h4 className="text-3xl font-black text-white tracking-tighter italic drop-shadow-2xl">{country.name}</h4>
+                <Link 
+                  to="/countries" 
+                  className={`group relative aspect-[3/4] rounded-3xl overflow-hidden border border-white/10 hover:border-brand-coral transition-all duration-700 shadow-2xl block`}
+                >
+                  <img 
+                    src={PARTNER_SKYLINES[country.id as keyof typeof PARTNER_SKYLINES]} 
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                    alt={country.name}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+                  
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-4xl drop-shadow-2xl">{country.flag}</span>
+                      <h4 className="text-3xl font-black text-white tracking-tighter italic drop-shadow-2xl">{country.name}</h4>
+                    </div>
+                    <p className="text-white/70 text-sm font-medium italic line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      {country.summary}
+                    </p>
                   </div>
-                  <p className="text-white/70 text-sm font-medium italic line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    {country.summary}
-                  </p>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 8. Target Sectors - Redesigned with Images */}
-      <section className="py-32 bg-brand-navy border-t border-white/5">
+      {/* 8. Target Sectors - Neat Editorial Design */}
+      <section className="py-40 bg-brand-navy border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24 reveal">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8 italic">Target <span className="text-brand-coral">Sectors</span></h2>
-            <p className="text-white/40 text-xl font-medium italic max-w-3xl mx-auto">
-              Focusing on the high growth industries that define the future of the Asia Canada trade corridor.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-32 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="max-w-2xl"
+            >
+              <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block italic uppercase">Strategic Focus</span>
+              <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none mb-8 italic">Target <span className="text-brand-coral">Sectors</span></h2>
+              <p className="text-white/40 text-xl font-medium italic">
+                Focusing on the high growth industries that define the future of the Asia Canada trade corridor.
+              </p>
+            </motion.div>
+            <Link to="/sectors" className="text-brand-coral font-bold text-sm tracking-tight hover:text-white transition-colors italic flex items-center gap-3">
+              Explore All Sectors <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-px bg-white/10 border border-white/10 overflow-hidden rounded-sm">
             {SECTORS.map((sector, i) => (
-              <Link 
-                key={sector.id} 
-                to="/sectors" 
-                className="reveal relative h-80 rounded-3xl overflow-hidden border border-white/10 group hover:border-brand-coral transition-all shadow-2xl"
-                style={{ transitionDelay: `${i * 100}ms` }}
+              <motion.div
+                key={sector.id}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
               >
-                <img 
-                  src={SECTOR_IMAGES[sector.id as keyof typeof SECTOR_IMAGES]} 
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
-                  alt={sector.title}
-                />
-                <div className="absolute inset-0 bg-brand-navy/60 group-hover:bg-brand-navy/40 transition-all duration-500"></div>
-                <div className="absolute inset-0 p-12 flex flex-col justify-center items-center text-center">
-                  <div className="w-16 h-16 bg-brand-coral rounded-2xl flex items-center justify-center text-white mb-6 shadow-xl transform group-hover:scale-110 transition-transform">
+                <Link 
+                  to="/sectors" 
+                  className="group relative bg-brand-navy p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 hover:bg-white/5 transition-all duration-500"
+                >
+                  <div className="text-white/10 font-black text-6xl md:text-8xl italic tracking-tighter group-hover:text-brand-coral/20 transition-colors">
+                    0{i + 1}
+                  </div>
+                  <div className="w-16 h-16 bg-white/5 rounded-xl flex items-center justify-center text-brand-coral group-hover:bg-brand-coral group-hover:text-white transition-all shadow-sm">
                     {React.cloneElement(sector.icon as React.ReactElement, { className: 'w-8 h-8' })}
                   </div>
-                  <h4 className="text-3xl font-black text-white tracking-tighter italic mb-4">{sector.title}</h4>
-                  <p className="text-white/70 text-sm font-bold tracking-tight italic leading-relaxed max-w-md opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                    {sector.description}
-                  </p>
-                </div>
-              </Link>
+                  <div className="flex-grow text-center md:text-left">
+                    <h4 className="text-3xl md:text-4xl font-black text-white tracking-tighter italic mb-4 group-hover:translate-x-4 transition-transform duration-500">{sector.title}</h4>
+                    <p className="text-white/40 text-sm font-medium italic leading-relaxed max-w-2xl">
+                      {sector.description}
+                    </p>
+                  </div>
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowRight className="w-8 h-8 text-brand-coral" />
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 7. Who is this for? - Enhanced Visibility & Movement */}
-      <section className="py-32 bg-brand-navy border-t border-white/5">
+      {/* 7. Who is this for? - Minimalist Redesign */}
+      <section className="py-40 bg-brand-navy border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter text-center mb-32 reveal italic uppercase">Who is this for?</h2>
-          <div className="grid lg:grid-cols-3 gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-32"
+          >
+            <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block italic uppercase">Engagement</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter italic uppercase">Who is this for?</h2>
+          </motion.div>
+          <div className="grid lg:grid-cols-3 gap-16">
             {[
               {
                 title: "Visitors",
@@ -272,20 +358,29 @@ const Home: React.FC = () => {
                 link: "/sponsors"
               }
             ].map((block, i) => (
-              <div key={i} className="reveal glass-card p-16 border border-white/10 flex flex-col h-full group hover:border-brand-coral transition-all bg-white/5 hover:-translate-y-4 duration-500">
-                <h3 className="text-4xl font-black text-white tracking-tighter mb-12 group-hover:text-brand-coral transition-colors italic">{block.title}</h3>
-                <ul className="space-y-6 mb-16 flex-grow">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex flex-col h-full group"
+              >
+                <div className="mb-10 flex items-center gap-6">
+                  <div className="w-12 h-px bg-brand-coral"></div>
+                  <h3 className="text-3xl font-black text-white tracking-tighter group-hover:text-brand-coral transition-colors italic">{block.title}</h3>
+                </div>
+                <ul className="space-y-6 mb-16 flex-grow border-l border-white/10 pl-8 ml-6">
                   {block.benefits.map((b, j) => (
-                    <li key={j} className="flex items-center gap-4 text-sm md:text-base font-bold tracking-tight text-white italic">
-                      <div className="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></div>
+                    <li key={j} className="text-sm md:text-base font-bold tracking-tight text-white/60 italic hover:text-white transition-colors cursor-default">
                       {b}
                     </li>
                   ))}
                 </ul>
-                <Link to={block.link} className="inline-flex items-center justify-between bg-brand-coral text-white px-10 py-5 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-brand-coral transition-all group/btn italic shadow-xl">
+                <Link to={block.link} className="inline-flex items-center gap-4 text-brand-coral font-black text-xs tracking-widest hover:text-white transition-all group/btn italic uppercase">
                   {block.cta} <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" />
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -295,17 +390,33 @@ const Home: React.FC = () => {
       <section className="py-32 bg-brand-navy border-t border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div className="reveal relative aspect-square rounded-3xl overflow-hidden border border-white/10 group hidden lg:block shadow-2xl">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative aspect-square rounded-sm overflow-hidden border border-white/10 group hidden lg:block shadow-2xl"
+            >
               <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover" alt="Experience" />
-            </div>
-            <div className="reveal">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-12 italic">The Event <br/><span className="text-brand-coral">Experience</span></h2>
               <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
                 Beyond the exhibition floor, AEEE 2026 offers an immersive three day ecosystem designed to catalyze trade and innovation.
               </p>
               <div className="grid grid-cols-1 gap-8 mb-16">
                 {EXPERIENCE_FEATURES.map((feat, i) => (
-                  <div key={i} className="flex items-start gap-6 group">
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-start gap-6 group"
+                  >
                     <div className="w-14 h-14 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-brand-coral flex-shrink-0 group-hover:bg-brand-coral group-hover:text-white transition-all shadow-xl">
                       {React.cloneElement(feat.icon as React.ReactElement, { className: 'w-7 h-7' })}
                     </div>
@@ -313,13 +424,13 @@ const Home: React.FC = () => {
                       <h4 className="text-xl font-black text-white tracking-tighter italic mb-2">{feat.title}</h4>
                       <p className="text-white/40 text-[11px] font-bold tracking-tight italic leading-relaxed">{feat.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-              <Link to="/experience" className="inline-flex items-center gap-4 bg-brand-coral text-white px-12 py-6 rounded-full font-black text-sm tracking-tight hover:bg-white hover:text-brand-coral transition-all shadow-2xl italic">
+              <Link to="/experience" className="inline-flex items-center gap-4 bg-brand-coral text-white px-12 py-6 rounded-full font-black text-sm tracking-tight hover:bg-white hover:text-brand-coral transition-all shadow-2xl italic uppercase">
                 Discover the Experience <ArrowRight className="w-5 h-5" />
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -328,20 +439,32 @@ const Home: React.FC = () => {
       <section className="py-32 bg-brand-navy border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-            <div className="reveal">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8 italic">Featured <span className="text-brand-coral">Speakers</span></h2>
               <p className="text-white/40 text-xl font-medium italic max-w-2xl">
                 Gain insights from global visionaries and industry leaders shaping the future of international trade.
               </p>
-            </div>
-            <Link to="/speakers" className="reveal inline-flex items-center gap-4 text-brand-coral font-bold text-sm tracking-tight hover:text-white transition-colors italic">
+            </motion.div>
+            <Link to="/speakers" className="inline-flex items-center gap-4 text-brand-coral font-bold text-sm tracking-tight hover:text-white transition-colors italic">
               Meet All Speakers <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {SPEAKERS.map((speaker, i) => (
-              <div key={i} className="reveal glass-card p-10 border border-white/10 group hover:border-brand-coral transition-all bg-white/5">
-                <div className="w-24 h-24 rounded-2xl bg-white/10 mb-8 overflow-hidden border border-white/10 group-hover:border-brand-coral transition-all">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="p-10 border border-white/10 group hover:border-brand-coral transition-all bg-white/5 rounded-sm"
+              >
+                <div className="w-24 h-24 rounded-sm bg-white/10 mb-8 overflow-hidden border border-white/10 group-hover:border-brand-coral transition-all">
                   {speaker.image ? (
                     <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover" />
                   ) : (
@@ -353,7 +476,7 @@ const Home: React.FC = () => {
                 <h4 className="text-2xl font-black text-white tracking-tighter italic mb-2">{speaker.name}</h4>
                 <div className="text-brand-coral font-bold text-xs tracking-tight italic mb-4">{speaker.role}</div>
                 <p className="text-white/40 text-sm italic font-medium leading-relaxed">{speaker.topic}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -362,26 +485,40 @@ const Home: React.FC = () => {
       {/* 10. Testimonials Section - New */}
       <section className="py-32 bg-brand-navy border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24 reveal">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8 italic">What People <span className="text-brand-coral">Say</span></h2>
-          </div>
+          </motion.div>
           <div className="max-w-4xl mx-auto">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="reveal glass-card p-16 border border-white/10 text-center space-y-10 bg-white/5 relative overflow-hidden">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="p-16 border border-white/10 text-center space-y-10 bg-white/5 relative overflow-hidden rounded-sm"
+              >
                 <div className="absolute top-0 left-0 p-12 text-white/5 font-black text-9xl pointer-events-none italic">"</div>
                 <p className="text-2xl md:text-3xl text-white font-medium italic leading-relaxed relative z-10">
                   {t.quote}
                 </p>
                 <div className="flex flex-col items-center gap-4 relative z-10">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-coral shadow-xl">
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-coral shadow-xl"
+                  >
                     <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
-                  </div>
+                  </motion.div>
                   <div>
                     <h4 className="text-xl font-black text-white tracking-tighter italic">{t.name}</h4>
                     <div className="text-brand-coral font-bold text-xs tracking-tight italic">{t.role}, {t.company}</div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -414,11 +551,11 @@ const Home: React.FC = () => {
       {/* 3. Event Quick Info Bar - Moved to bottom */}
       <section className="py-32 bg-brand-navy border-t border-white/5 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[3rem] shadow-2xl p-12 md:p-20 overflow-hidden relative group">
+          <div className="bg-white/5 border border-white/10 rounded-sm shadow-2xl p-12 md:p-20 overflow-hidden relative group">
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-coral/10 blur-[150px] rounded-full -z-10"></div>
             <div className="grid md:grid-cols-3 gap-16 items-center">
-              <div className="flex items-center gap-8 reveal">
-                <div className="w-20 h-20 rounded-3xl bg-brand-coral flex items-center justify-center text-white shadow-2xl">
+              <div className="flex items-center gap-8">
+                <div className="w-20 h-20 rounded-sm bg-brand-coral flex items-center justify-center text-white shadow-2xl">
                   <Calendar className="w-10 h-10" />
                 </div>
                 <div>
@@ -426,8 +563,8 @@ const Home: React.FC = () => {
                   <div className="text-2xl font-black text-white tracking-tight italic">October 15 17, 2026</div>
                 </div>
               </div>
-              <div className="flex items-center gap-8 reveal">
-                <div className="w-20 h-20 rounded-3xl bg-white/10 border border-white/20 flex items-center justify-center text-brand-coral shadow-2xl">
+              <div className="flex items-center gap-8">
+                <div className="w-20 h-20 rounded-sm bg-white/10 border border-white/20 flex items-center justify-center text-brand-coral shadow-2xl">
                   <MapPin className="w-10 h-10" />
                 </div>
                 <div>
@@ -435,7 +572,7 @@ const Home: React.FC = () => {
                   <div className="text-2xl font-black text-white tracking-tight italic">Enercare Centre, Toronto</div>
                 </div>
               </div>
-              <div className="flex items-center justify-end reveal">
+              <div className="flex items-center justify-end">
                 <div className="text-right">
                   <div className="text-[11px] text-white/40 font-black uppercase tracking-[0.3em] italic mb-4">Registration Status</div>
                   <div className="inline-flex items-center gap-3 px-6 py-3 bg-brand-coral/20 border border-brand-coral/30 rounded-full">

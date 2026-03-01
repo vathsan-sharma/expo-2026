@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Globe, ChevronRight, Phone, Mail, MapPin, Linkedin, Twitter, Instagram, Facebook, Youtube } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CONTACT_INFO } from '../constants';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -213,8 +214,18 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </header>
 
-      <main className="flex-grow pt-0">
-        {children}
+      <main className="flex-grow pt-0 overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            {children}
+          </motion.div>
+        </AnimatePresence>
       </main>
 
       {/* Footer */}
