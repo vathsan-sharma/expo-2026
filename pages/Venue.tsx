@@ -35,7 +35,7 @@ const Venue: React.FC = () => {
             <img 
               src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200" 
               alt="Venue" 
-              className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
+              className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" 
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
             <div className="absolute bottom-8 left-8">
@@ -47,7 +47,7 @@ const Venue: React.FC = () => {
           <div>
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Event Venue</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-8 font-medium italic">
-              AEEE 2026 will be hosted at the prestigious Enercare Centre, one of North America's largest and most advanced exhibition facilities.
+              AEEE 2026 will be hosted at the prestigious Enercare Centre, one of Canada's largest and most advanced exhibition facilities.
             </p>
             <div className="space-y-6 mb-12">
               <div className="flex items-start gap-4">
@@ -68,12 +68,12 @@ const Venue: React.FC = () => {
         <div className="bg-white/5 rounded-sm p-16 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-48">
           <h2 className="text-4xl md:text-7xl font-black mb-12 tracking-tighter leading-none text-center italic">About Toronto, Canada</h2>
           <p className="text-white/60 text-xl font-medium italic leading-relaxed max-w-4xl mx-auto text-center mb-20">
-            Toronto is Canada’s global financial hub and the ideal host for AEEE 2026. As North America’s fastest-growing tech hub, it offers a vibrant backdrop for international trade and innovation.
+            Toronto is Canada’s global financial hub and the ideal host for AEEE 2026. As Canada’s fastest growing tech hub, it offers a vibrant backdrop for international trade and innovation.
           </p>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               { icon: <Plane />, title: "Travel to Toronto", text: "Pearson International Airport (YYZ) is just 25 minutes from the venue." },
-              { icon: <Car />, title: "Local Transport", text: "Efficient public transit (TTC) and ride-sharing services are widely available." },
+              { icon: <Car />, title: "Local Transport", text: "Efficient public transit (TTC) and ride sharing services are widely available." },
               { icon: <ShieldCheck />, title: "Visa Information", text: "Check the official IRCC website for visa requirements for your country." }
             ].map((item, i) => (
               <div key={i} className="text-center space-y-6">
@@ -110,17 +110,17 @@ const Venue: React.FC = () => {
               </button>
             </div>
             <div className="relative rounded-sm overflow-hidden border border-white/10">
-              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale opacity-40" alt="Hotel" />
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Hotel" />
             </div>
           </div>
         </div>
 
         {/* On-Site Facilities */}
         <div className="reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">On-Site Facilities</h2>
+          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">On Site Facilities</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: <Wifi />, label: "High-Speed Wi-Fi" },
+              { icon: <Wifi />, label: "High Speed Wi-Fi" },
               { icon: <Coffee />, label: "Networking Cafes" },
               { icon: <Utensils />, label: "Food Courts" },
               { icon: <ShieldCheck />, label: "24/7 Security" }

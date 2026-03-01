@@ -19,14 +19,14 @@ const News: React.FC = () => {
       category: "Announcement",
       date: "Oct 12, 2025",
       title: "Toronto Confirmed as Host City for AEEE 2026",
-      desc: "The Enercare Centre will serve as the official venue for Asia's largest emerging economies showcase in North America.",
+      desc: "The Enercare Centre will serve as the official venue for Asia's largest emerging economies showcase in Canada.",
       image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&q=80&w=800"
     },
     {
       category: "Partnership",
       date: "Nov 05, 2025",
       title: "Title Sponsors Announced for Strategic Trade Council",
-      desc: "Leading financial institutions join forces to support cross-border innovation and sustainable development.",
+      desc: "Leading financial institutions join forces to support cross border innovation and sustainable development.",
       image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800"
     },
     {
@@ -58,7 +58,7 @@ const News: React.FC = () => {
           {articles.map((article, i) => (
             <div key={i} className="reveal group" style={{ transitionDelay: `${i * 150}ms` }}>
               <div className="relative aspect-video rounded-sm overflow-hidden mb-8 border border-white/10">
-                <img src={article.image} alt={article.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
+                <img src={article.image} alt={article.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
                 <div className="absolute top-4 left-4 bg-brand-coral text-white px-4 py-1.5 rounded-sm font-bold text-[9px] tracking-tight italic">{article.category}</div>
               </div>
               <div className="flex items-center gap-4 text-[9px] font-bold tracking-tight text-white/20 mb-4 italic">
@@ -100,7 +100,7 @@ const News: React.FC = () => {
               </div>
             </div>
             <div className="relative rounded-sm overflow-hidden border border-white/10 aspect-square">
-              <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover grayscale opacity-40" alt="Insights" />
+              <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=1000" className="w-full h-full object-cover" alt="Insights" />
             </div>
           </div>
         </div>

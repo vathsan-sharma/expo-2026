@@ -23,7 +23,7 @@ const About: React.FC = () => {
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Our Vision</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none">About the Expo</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            AEEE 2026 is the definitive platform for cross-border trade, innovation, and strategic investment between Canada and Asia's emerging economies.
+            AEEE 2026 is the definitive platform for cross border trade, innovation, and strategic investment between Canada and Asia's emerging economies.
           </p>
         </div>
       </section>
@@ -37,7 +37,7 @@ const About: React.FC = () => {
               Asia's Emerging Economies Expo (AEEE) 2026 is more than just a trade show; it is a catalyst for global economic integration.
             </p>
             <p className="text-white/40 text-lg leading-relaxed mb-12 italic font-medium">
-              Hosted in Toronto, North America's fastest-growing tech and financial hub, the expo serves as a strategic bridge for businesses looking to navigate the complexities of international expansion and tap into the world's most dynamic growth engines.
+              Hosted in Toronto, Canada's fastest growing tech and financial hub, the expo serves as a strategic bridge for businesses looking to navigate the complexities of international expansion and tap into the world's most dynamic growth engines.
             </p>
             <div className="flex gap-6">
               <Link to="/registration" className="bg-brand-coral text-white px-10 py-5 rounded-sm font-bold text-sm tracking-tight hover:bg-white hover:text-brand-coral transition-all shadow-xl">
@@ -46,7 +46,7 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="reveal relative aspect-video rounded-sm overflow-hidden border border-white/10 group">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="About" />
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-1000" alt="About" />
           </div>
         </div>
 
@@ -56,14 +56,14 @@ const About: React.FC = () => {
             <Target className="w-16 h-16 text-brand-coral" />
             <h3 className="text-4xl font-black text-white tracking-tighter italic">Our Mission</h3>
             <p className="text-white/40 text-lg italic font-medium leading-relaxed">
-              To facilitate high-impact partnerships and knowledge exchange that drive sustainable economic growth across the Asia-Canada corridor.
+              To facilitate high impact partnerships and knowledge exchange that drive sustainable economic growth across the Asia Canada corridor.
             </p>
           </div>
           <div className="glass-card p-12 md:p-20 border border-white/10 space-y-8 group hover:border-brand-coral transition-all">
             <Eye className="w-16 h-16 text-brand-coral" />
             <h3 className="text-4xl font-black text-white tracking-tighter italic">Our Vision</h3>
             <p className="text-white/40 text-lg italic font-medium leading-relaxed">
-              To be the world's leading platform for emerging market intelligence and cross-continental business collaboration.
+              To be the world's leading platform for emerging market intelligence and cross continental business collaboration.
             </p>
           </div>
         </div>
@@ -75,7 +75,7 @@ const About: React.FC = () => {
             {[
               { title: "Policy Makers", desc: "Government ministers and trade commissioners from 8+ nations." },
               { title: "Investors", desc: "Venture capitalists and institutional investors seeking frontier opportunities." },
-              { title: "Industry Leaders", desc: "C-suite executives from high-growth sectors like Fintech and Energy." }
+              { title: "Industry Leaders", desc: "C suite executives from high growth sectors like Fintech and Energy." }
             ].map((profile, i) => (
               <div key={i} className="text-center space-y-6 p-12 bg-white/5 border border-white/10 rounded-sm hover:bg-white/10 transition-all">
                 <Users className="w-12 h-12 text-brand-coral mx-auto" />
@@ -91,9 +91,9 @@ const About: React.FC = () => {
           <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tighter leading-none text-center italic">Expo Structure</h2>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { icon: <LayoutGrid />, title: "Exhibition Zones", text: "National pavilions and sector-specific clusters showcasing innovation." },
-              { icon: <Star />, title: "Conference Tracks", text: "High-level keynotes and technical sessions on market trends." },
-              { icon: <Globe />, title: "B2B Matchmaking", text: "Curated networking sessions for pre-qualified trade partners." }
+              { icon: <LayoutGrid />, title: "Exhibition Zones", text: "National pavilions and sector specific clusters showcasing innovation." },
+              { icon: <Star />, title: "Conference Tracks", text: "High level keynotes and technical sessions on market trends." },
+              { icon: <Globe />, title: "B2B Matchmaking", text: "Curated networking sessions for pre qualified trade partners." }
             ].map((item, i) => (
               <div key={i} className="space-y-6 text-center">
                 <div className="text-brand-coral">{React.cloneElement(item.icon as React.ReactElement, { className: 'w-12 h-12 mx-auto' })}</div>
@@ -107,7 +107,7 @@ const About: React.FC = () => {
         {/* Organizers and Partners */}
         <div className="mb-48 reveal">
           <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Organizers & Partners</h2>
-          <div className="flex flex-wrap justify-center gap-16 opacity-20 grayscale">
+          <div className="flex flex-wrap justify-center gap-16">
             {[1, 2, 3, 4, 5].map(i => (
               <div key={i} className="w-40 h-20 bg-white/10 rounded-sm flex items-center justify-center font-bold text-xs">Partner {i}</div>
             ))}
@@ -121,7 +121,7 @@ const About: React.FC = () => {
         <div className="reveal text-center">
           <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-white leading-none italic">Our Impact</h2>
           <p className="text-white/40 text-xl font-medium italic max-w-3xl mx-auto mb-20 leading-relaxed">
-            Building on the success of previous editions, AEEE has facilitated over $500M in cross-border investment and connected 1,000+ businesses across continents.
+            Building on the success of previous editions, AEEE has facilitated over $500M in cross border investment and connected 1,000+ businesses across continents.
           </p>
           <div className="grid md:grid-cols-3 gap-12">
             {[

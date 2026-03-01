@@ -15,10 +15,10 @@ const Speakers: React.FC = () => {
   }, []);
 
   const featuredSpeakers = [
-    { name: "Dr. Elena Vance", role: "Director of Trade Policy", org: "Global Markets Council", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
-    { name: "Marcus Chen", role: "Chief Innovation Officer", org: "AsiaTech Ventures", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400" },
-    { name: "Sarah Jenkins", role: "Head of Sustainability", org: "EcoFuture Systems", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" },
-    { name: "Arjun Gupta", role: "Managing Partner", org: "Frontier Capital", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" }
+    { name: "TBA", role: "To Be Announced", org: "Strategic Partner", image: "" },
+    { name: "TBA", role: "To Be Announced", org: "Strategic Partner", image: "" },
+    { name: "TBA", role: "To Be Announced", org: "Strategic Partner", image: "" },
+    { name: "TBA", role: "To Be Announced", org: "Strategic Partner", image: "" }
   ];
 
   return (
@@ -30,7 +30,7 @@ const Speakers: React.FC = () => {
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Thought Leadership</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Speakers</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            Meet the visionaries, policy makers, and industry leaders shaping the future of Asia-Canada economic relations.
+            Meet the visionaries, policy makers, and industry leaders shaping the future of Asia Canada economic relations.
           </p>
         </div>
       </section>
@@ -40,7 +40,7 @@ const Speakers: React.FC = () => {
         <div className="text-center mb-32 reveal">
           <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-white italic">Speakers & Thought Leaders</h2>
           <p className="text-white/40 text-xl font-medium italic max-w-3xl mx-auto leading-relaxed">
-            Our speakers bring deep expertise in cross-border trade, digital transformation, and sustainable development across the world's most dynamic markets.
+            Our speakers bring deep expertise in cross border trade, digital transformation, and sustainable development across the world's most dynamic markets.
           </p>
         </div>
 
@@ -48,9 +48,15 @@ const Speakers: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-48">
           {featuredSpeakers.map((speaker, i) => (
             <div key={i} className="reveal group" style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-8 border border-white/10">
-                <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-60"></div>
+              <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-8 border border-white/10 bg-white/5 flex items-center justify-center">
+                {speaker.image ? (
+                  <>
+                    <img src={speaker.image} alt={speaker.name} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-60"></div>
+                  </>
+                ) : (
+                  <div className="text-white/10 font-black text-4xl italic tracking-tighter">TBA</div>
+                )}
                 <div className="absolute bottom-6 left-6 flex gap-4 translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
                   <Linkedin className="w-5 h-5 text-white hover:text-brand-coral cursor-pointer" />
                   <Twitter className="w-5 h-5 text-white hover:text-brand-coral cursor-pointer" />
@@ -73,7 +79,7 @@ const Speakers: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { label: "Government", count: "25+" },
-              { label: "C-Suite", count: "40+" },
+              { label: "C Suite", count: "40+" },
               { label: "Innovators", count: "30+" },
               { label: "Economists", count: "15+" }
             ].map((stat, i) => (
@@ -90,7 +96,7 @@ const Speakers: React.FC = () => {
           <div>
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Speaking Opportunities</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
-              Are you a thought leader in the Asia-Canada trade corridor? We are currently accepting proposals for technical tracks and panel discussions.
+              Are you a thought leader in the Asia Canada trade corridor? We are currently accepting proposals for technical tracks and panel discussions.
             </p>
             <div className="space-y-8">
               <div className="flex items-start gap-8 glass-card p-8 rounded-sm border border-white/10">

@@ -19,18 +19,18 @@ const Agenda: React.FC = () => {
   const schedule = {
     1: [
       { time: "09:00 AM", title: "Opening Ceremony & Ministerial Keynote", track: "Main Stage", desc: "Official inauguration of AEEE 2026 with leaders from Canada and participating Asian nations." },
-      { time: "11:30 AM", title: "The Future of Asia-Pacific Trade", track: "Strategic Dialogue", desc: "Panel discussion on evolving trade policies and digital economy frameworks." },
+      { time: "11:30 AM", title: "The Future of Asia Pacific Trade", track: "Strategic Dialogue", desc: "Panel discussion on evolving trade policies and digital economy frameworks." },
       { time: "02:00 PM", title: "Fintech Frontier: Digital Banking in SE Asia", track: "Innovation Track", desc: "Exploring the rapid expansion of mobile banking and fintech ecosystems." },
-      { time: "04:30 PM", title: "Networking Reception: Canada-Asia Bridge", track: "Networking", desc: "Informal networking session for delegates and exhibitors." }
+      { time: "04:30 PM", title: "Networking Reception: Canada Asia Bridge", track: "Networking", desc: "Informal networking session for delegates and exhibitors." }
     ],
     2: [
-      { time: "09:30 AM", title: "Energy Transition & Sustainability", track: "Green Economy", desc: "Focusing on renewable energy projects and cross-border investment in green tech." },
+      { time: "09:30 AM", title: "Energy Transition & Sustainability", track: "Green Economy", desc: "Focusing on renewable energy projects and cross border investment in green tech." },
       { time: "12:00 PM", title: "Manufacturing 4.0: Vietnam & Thailand", track: "Industrial Hub", desc: "Showcasing the next generation of industrial automation in emerging hubs." },
       { time: "02:30 PM", title: "AI & Data Sovereignty in Emerging Markets", track: "Innovation Track", desc: "Discussing data privacy and AI adoption across diverse regulatory landscapes." },
       { time: "07:00 PM", title: "Ministerial Gala Dinner", track: "VIP Event", desc: "Exclusive dinner for sponsors, speakers, and government delegates." }
     ],
     3: [
-      { time: "10:00 AM", title: "B2B Matchmaking: Agri-Tech Solutions", track: "Strategic Dialogue", desc: "Facilitated sessions between Canadian tech providers and Asian agricultural leaders." },
+      { time: "10:00 AM", title: "B2B Matchmaking: Agri Tech Solutions", track: "Strategic Dialogue", desc: "Facilitated sessions between Canadian tech providers and Asian agricultural leaders." },
       { time: "01:00 PM", title: "The Rise of the Digital Nomad in Asia", track: "Lifestyle & Tourism", desc: "Impact of remote work on tourism and urban development in Thailand and Indonesia." },
       { time: "03:30 PM", title: "Closing Plenary: The 2030 Roadmap", track: "Main Stage", desc: "Summarizing key takeaways and announcing the roadmap for future collaboration." }
     ]
@@ -45,7 +45,7 @@ const Agenda: React.FC = () => {
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Event Schedule</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Conference Agenda</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            A comprehensive three-day program featuring high-level keynotes, technical tracks, and strategic B2B sessions.
+            A comprehensive three day program featuring high level keynotes, technical tracks, and strategic B2B sessions.
           </p>
         </div>
       </section>

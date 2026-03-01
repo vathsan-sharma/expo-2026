@@ -20,9 +20,9 @@ const FAQ: React.FC = () => {
     {
       category: "General",
       questions: [
-        { q: "What is Asia's Emerging Economies Expo (AEEE) 2026?", a: "AEEE 2026 is a premier international trade event in Toronto, Canada, showcasing high-growth opportunities across Asia's most dynamic emerging markets." },
-        { q: "Where and when will the event take place?", a: "The expo will be held at the Enercare Centre, Toronto, from October 15-17, 2026." },
-        { q: "Who should attend AEEE 2026?", a: "The event is designed for investors, trade leaders, government officials, and business executives looking to scale operations in the Asia-Canada corridor." }
+        { q: "What is Asia's Emerging Economies Expo (AEEE) 2026?", a: "AEEE 2026 is a premier international trade event in Toronto, Canada, showcasing high growth opportunities across Asia's most dynamic emerging markets." },
+        { q: "Where and when will the event take place?", a: "The expo will be held at the Enercare Centre, Toronto, from October 15 17, 2026." },
+        { q: "Who should attend AEEE 2026?", a: "The event is designed for investors, trade leaders, government officials, and business executives looking to scale operations in the Asia Canada corridor." }
       ]
     },
     {
@@ -46,7 +46,7 @@ const FAQ: React.FC = () => {
       questions: [
         { q: "Do I need a visa to enter Canada?", a: "Visa requirements vary by country. Please check the official IRCC website for the latest information." },
         { q: "Are there recommended hotels near the venue?", a: "Yes, we have partnered with several hotels, including Hotel X Toronto, to offer exclusive rates for delegates." },
-        { q: "Is parking available at the Enercare Centre?", a: "Yes, the venue has extensive on-site parking facilities available for a daily fee." }
+        { q: "Is parking available at the Enercare Centre?", a: "Yes, the venue has extensive on site parking facilities available for a daily fee." }
       ]
     }
   ];

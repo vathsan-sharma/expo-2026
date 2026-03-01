@@ -15,10 +15,10 @@ const Registration: React.FC = () => {
   }, []);
 
   const ticketTypes = [
-    { name: "Visitor Pass", price: "CAD 150", access: "Exhibition Hall", notes: "Valid for 1 day" },
-    { name: "Full Event Pass", price: "CAD 350", access: "All Tracks + Expo", notes: "Valid for 3 days" },
-    { name: "Conference Pass", price: "CAD 250", access: "Conference Sessions", notes: "Valid for 3 days" },
-    { name: "VIP Executive", price: "CAD 850", access: "All Access + VIP Lounge", notes: "Limited availability" }
+    { name: "Visitor Pass", price: "CAD 0", access: "Exhibition Hall", notes: "Valid for 1 day" },
+    { name: "Full Event Pass", price: "CAD 0", access: "All Tracks + Expo", notes: "Valid for 3 days" },
+    { name: "Conference Pass", price: "CAD 0", access: "Conference Sessions", notes: "Valid for 3 days" },
+    { name: "VIP Executive", price: "CAD 0", access: "All Access + VIP Lounge", notes: "Limited availability" }
   ];
 
   return (
@@ -30,7 +30,7 @@ const Registration: React.FC = () => {
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Secure Your Spot</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Registration & Tickets</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            Choose the right pass for your professional goals and join the conversation shaping the future of Asia-Canada trade.
+            Choose the right pass for your professional goals and join the conversation shaping the future of Asia Canada trade.
           </p>
         </div>
       </section>
@@ -90,9 +90,9 @@ const Registration: React.FC = () => {
           {/* Key Dates */}
           <div className="grid md:grid-cols-3 gap-8 reveal">
             {[
-              { label: "Early-Bird Ends", date: "June 30, 2026", icon: <Clock /> },
+              { label: "Early Bird Ends", date: "June 30, 2026", icon: <Clock /> },
               { label: "Standard Ends", date: "Sept 30, 2026", icon: <Calendar /> },
-              { label: "On-Site Registration", date: "Oct 15-17, 2026", icon: <MapPin /> }
+              { label: "On Site Registration", date: "Oct 15 17, 2026", icon: <MapPin /> }
             ].map((item, i) => (
               <div key={i} className="p-10 bg-white/5 border border-white/10 rounded-sm text-center space-y-4 group hover:border-brand-coral transition-all">
                 <div className="text-brand-coral mx-auto group-hover:scale-110 transition-transform">{React.cloneElement(item.icon as React.ReactElement, { className: 'w-8 h-8 mx-auto' })}</div>
@@ -110,7 +110,7 @@ const Registration: React.FC = () => {
             {[
               { step: "01", title: "Select Ticket", desc: "Choose the pass that fits your needs from the options above.", icon: <ArrowRight /> },
               { step: "02", title: "Provide Details", desc: "Fill in your professional information and attendee details.", icon: <Users /> },
-              { step: "03", title: "Secure Payment", desc: "Complete your purchase safely via our Stripe-powered checkout.", icon: <CreditCard /> }
+              { step: "03", title: "Secure Payment", desc: "Complete your purchase safely via our Stripe powered checkout.", icon: <CreditCard /> }
             ].map((s, i) => (
               <div key={i} className="space-y-6 text-center">
                 <div className="text-5xl font-black text-brand-coral/20 italic">{s.step}</div>

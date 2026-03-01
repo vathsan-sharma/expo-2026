@@ -23,7 +23,7 @@ const EventExperience: React.FC = () => {
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Operational Excellence</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Event Experience</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            An immersive three-day ecosystem designed to catalyze trade, innovation, and cross-border partnerships at Toronto’s most iconic hub.
+            An immersive three day ecosystem designed to catalyze trade, innovation, and cross border partnerships at Toronto’s most iconic hub.
           </p>
         </div>
       </section>
@@ -32,7 +32,7 @@ const EventExperience: React.FC = () => {
         <div className="mb-40 max-w-4xl mx-auto text-center reveal">
           <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral italic">What to Expect</h2>
           <p className="text-white/60 text-xl leading-relaxed italic font-medium">
-            Toronto’s 100 Princess Blvd will be transformed into an international trade bridge. Expect a high-octane program featuring curated matchmaking, policy deep-dives, and industrial showcases representing 8 nations and hundreds of market leaders.
+            Toronto’s 100 Princess Blvd will be transformed into an international trade bridge. Expect a high octane program featuring curated matchmaking, policy deep dives, and industrial showcases representing 8 nations and hundreds of market leaders.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ const EventExperience: React.FC = () => {
               <div key={id} className="relative overflow-hidden rounded-sm group shadow-lg border border-white/10 aspect-square">
                 <img 
                   src={`https://images.unsplash.com/photo-1540575861501-7ad05823c951?auto=format&fit=crop&q=80&w=600&h=600&sig=${id}`} 
-                  className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000" 
+                  className="w-full h-full object-cover group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000" 
                   alt={`Gallery Highlight ${id}`} 
                 />
                 <div className="absolute inset-0 bg-brand-coral/5 group-hover:bg-transparent transition-all"></div>

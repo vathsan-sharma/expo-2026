@@ -23,12 +23,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Visitors', path: '/visitors' },
-    { label: 'Exhibitors', path: '/exhibitors' },
-    { label: 'Sponsors', path: '/sponsors' },
-    { label: 'Agenda', path: '/agenda' },
-    { label: 'Speakers', path: '/speakers' },
+    { label: 'Participate', path: '#', subItems: [
+      { label: 'Join as visitor', path: '/visitors' },
+      { label: 'Join as exhibitor', path: '/exhibitors' },
+      { label: 'Join as sponsor', path: '/sponsors' },
+      { label: 'Speakers', path: '/speakers' },
+      { label: 'Agenda', path: '/agenda' },
+    ]},
     { label: 'Venue', path: '/venue' },
     { label: 'Countries', path: '/countries' },
     { label: 'Sectors', path: '/sectors' },
@@ -46,10 +47,10 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     <div className="flex flex-col min-h-screen bg-brand-navy">
       {/* Header */}
       <header 
-        className={`fixed top-6 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] max-w-[1400px] ${
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] max-w-[1400px] ${
           isScrolled 
             ? 'bg-brand-navy/60 backdrop-blur-2xl border border-white/10 py-2 px-6 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)]' 
-            : 'bg-brand-navy/20 backdrop-blur-md border border-white/5 py-4 px-10 rounded-3xl'
+            : 'bg-brand-navy/20 backdrop-blur-md border border-white/5 py-3 px-10 rounded-3xl'
         }`}
       >
         <div className="flex items-center justify-between">
@@ -59,47 +60,78 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Untitled%20design%20(29)%20(1).png" 
               alt="AEEE 2026 Logo" 
               className={`w-auto object-contain transition-all duration-500 group-hover:scale-105 ${
-                isScrolled ? 'h-16' : 'h-24'
+                isScrolled ? 'h-14' : 'h-20'
               }`}
               referrerPolicy="no-referrer"
             />
           </Link>
 
-          {/* Navigation - Centered */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
-            {navItems.map((item) => (
+          {/* Navigation & Actions - Right Aligned */}
+          <div className="flex items-center space-x-4 xl:space-x-8">
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+              {navItems.map((item) => (
+                <div key={item.label} className="relative group/nav-container">
+                  {item.subItems ? (
+                    <div className="flex flex-col items-center">
+                      <button 
+                        className={`px-3 py-2 text-xs xl:text-sm font-black tracking-[0.2em] transition-all duration-300 relative group/nav italic flex items-center gap-1 ${
+                          item.subItems.some(sub => location.pathname === sub.path) ? 'text-brand-coral' : 'text-white/50 hover:text-white'
+                        }`}
+                      >
+                        {item.label}
+                        <ChevronRight className="w-3 h-3 rotate-90" />
+                      </button>
+                      {/* Dropdown */}
+                      <div className="absolute top-full right-0 pt-4 opacity-0 translate-y-4 pointer-events-none group-hover/nav-container:opacity-100 group-hover/nav-container:translate-y-0 group-hover/nav-container:pointer-events-auto transition-all duration-300 z-[110]">
+                        <div className="bg-brand-navy/90 backdrop-blur-2xl border border-white/10 rounded-2xl p-4 min-w-[220px] shadow-2xl">
+                          {item.subItems.map((sub) => (
+                            <Link 
+                              key={sub.path} 
+                              to={sub.path}
+                              className={`block px-4 py-3 text-[11px] xl:text-xs font-black tracking-widest transition-all italic hover:text-brand-coral ${
+                                location.pathname === sub.path ? 'text-brand-coral' : 'text-white/50'
+                              }`}
+                            >
+                              {sub.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <Link 
+                      to={item.path}
+                      className={`px-3 py-2 text-xs xl:text-sm font-black tracking-[0.2em] transition-all duration-300 relative group/nav italic ${
+                        location.pathname === item.path ? 'text-brand-coral' : 'text-white/50 hover:text-white'
+                      }`}
+                    >
+                      {item.label}
+                      <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-coral rounded-full transition-all duration-300 ${
+                        location.pathname === item.path ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover/nav:opacity-50 group-hover/nav:scale-100'
+                      }`}></span>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
+
+            <div className="flex items-center space-x-6">
               <Link 
-                key={item.path} 
-                to={item.path}
-                className={`px-3 py-2 text-[10px] xl:text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative group/nav italic ${
-                  location.pathname === item.path ? 'text-brand-coral' : 'text-white/50 hover:text-white'
-                }`}
+                to="/registration" 
+                className="relative group overflow-hidden bg-brand-coral text-white px-8 py-3 text-xs font-black tracking-widest rounded-full shadow-[0_10px_20px_rgba(242,125,38,0.3)] hover:shadow-[0_15px_30px_rgba(242,125,38,0.5)] transition-all italic"
               >
-                {item.label}
-                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-brand-coral rounded-full transition-all duration-300 ${
-                  location.pathname === item.path ? 'opacity-100 scale-100' : 'opacity-0 scale-0 group-hover/nav:opacity-50 group-hover/nav:scale-100'
-                }`}></span>
+                <span className="relative z-10">Register</span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                <span className="absolute inset-0 flex items-center justify-center text-brand-coral translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-black z-20">Register</span>
               </Link>
-            ))}
-          </nav>
 
-          {/* Actions */}
-          <div className="flex items-center space-x-4">
-            <Link 
-              to="/registration" 
-              className="relative group overflow-hidden bg-brand-coral text-white px-6 py-2.5 text-[10px] font-black uppercase tracking-widest rounded-full shadow-[0_10px_20px_rgba(242,125,38,0.3)] hover:shadow-[0_15px_30px_rgba(242,125,38,0.5)] transition-all italic"
-            >
-              <span className="relative z-10">Register</span>
-              <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-              <span className="absolute inset-0 flex items-center justify-center text-brand-coral translate-y-full group-hover:translate-y-0 transition-transform duration-300 font-black z-20">Register</span>
-            </Link>
-
-            <button 
-              className="lg:hidden p-2 text-white hover:text-brand-coral transition-colors" 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+              <button 
+                className="lg:hidden p-2 text-white hover:text-brand-coral transition-colors" 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -125,26 +157,49 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </button>
           </div>
 
-          <div className="flex-grow flex flex-col items-center justify-center space-y-4 px-8">
+          <div className="flex-grow flex flex-col items-center justify-center space-y-6 px-8 overflow-y-auto py-20">
             {navItems.map((item, idx) => (
-              <Link 
-                key={item.path} 
-                to={item.path}
-                className={`text-3xl font-black tracking-tighter uppercase transition-all duration-500 italic hover:text-brand-coral ${
-                  location.pathname === item.path ? 'text-brand-coral translate-x-4' : 'text-white'
-                }`}
-                style={{ transitionDelay: `${idx * 50}ms` }}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
+              <div key={item.label} className="flex flex-col items-center w-full">
+                {item.subItems ? (
+                  <div className="flex flex-col items-center space-y-4 w-full">
+                    <button className="text-3xl font-black tracking-tighter italic text-white/30 mb-2">
+                      {item.label}
+                    </button>
+                    <div className="flex flex-col items-center space-y-3 bg-white/5 w-full py-6 rounded-2xl border border-white/10">
+                      {item.subItems.map((sub) => (
+                        <Link 
+                          key={sub.path} 
+                          to={sub.path}
+                          className={`text-xl font-black tracking-tighter transition-all duration-500 italic hover:text-brand-coral ${
+                            location.pathname === sub.path ? 'text-brand-coral' : 'text-white'
+                          }`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link 
+                    to={item.path}
+                    className={`text-3xl font-black tracking-tighter transition-all duration-500 italic hover:text-brand-coral ${
+                      location.pathname === item.path ? 'text-brand-coral' : 'text-white'
+                    }`}
+                    style={{ transitionDelay: `${idx * 50}ms` }}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
             ))}
             <Link 
               to="/registration"
-              className="mt-12 bg-brand-coral text-white px-12 py-5 font-black text-sm uppercase tracking-[0.3em] rounded-full shadow-2xl italic"
+              className="mt-12 bg-brand-coral text-white px-12 py-5 font-black text-sm tracking-[0.3em] rounded-full shadow-2xl italic"
               onClick={() => setIsMenuOpen(false)}
             >
-              Secure Your Pass
+              Secure your pass
             </Link>
           </div>
 
@@ -169,7 +224,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <div>
               <h4 className="text-white font-bold tracking-tight text-sm mb-8 italic">Navigation</h4>
               <ul className="space-y-4">
-                <li><Link to="/about" className="text-white/40 hover:text-brand-coral transition-colors text-xs font-medium tracking-tight">About the Expo</Link></li>
+                <li><Link to="/" className="text-white/40 hover:text-brand-coral transition-colors text-xs font-medium tracking-tight">Home</Link></li>
                 <li><Link to="/visitors" className="text-white/40 hover:text-brand-coral transition-colors text-xs font-medium tracking-tight">Visitors</Link></li>
                 <li><Link to="/exhibitors" className="text-white/40 hover:text-brand-coral transition-colors text-xs font-medium tracking-tight">Exhibitors</Link></li>
                 <li><Link to="/agenda" className="text-white/40 hover:text-brand-coral transition-colors text-xs font-medium tracking-tight">Conference Agenda</Link></li>

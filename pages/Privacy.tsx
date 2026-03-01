@@ -25,14 +25,14 @@ const Privacy: React.FC = () => {
               We collect personal information that you provide directly to us when you register for the event, subscribe to our newsletter, or contact us for enquiries. This may include your name, email address, phone number, organization, and job title.
             </p>
             <p>
-              We also collect payment information via our secure third-party processor, Stripe. We do not store full credit card details on our servers.
+              We also collect payment information via our secure third party processor, Stripe. We do not store full credit card details on our servers.
             </p>
           </div>
 
           <div className="space-y-6">
             <h2 className="text-2xl font-black text-white tracking-tighter border-b border-white/5 pb-4 italic">2. Use of Data</h2>
             <p>
-              Your data is used to facilitate your participation in AEEE 2026, including processing registrations, providing event updates, and managing on-site access. We also use data for internal analytics to improve our services.
+              Your data is used to facilitate your participation in AEEE 2026, including processing registrations, providing event updates, and managing on site access. We also use data for internal analytics to improve our services.
             </p>
             <p>
               If you have opted in, we may use your contact information to send you marketing communications about future events and industry insights.
@@ -42,7 +42,7 @@ const Privacy: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-black text-white tracking-tighter border-b border-white/5 pb-4 italic">3. Data Sharing</h2>
             <p>
-              We share your data with trusted third-party service providers who assist in our operations, such as payment processors (Stripe), email service providers, and event management platforms.
+              We share your data with trusted third party service providers who assist in our operations, such as payment processors (Stripe), email service providers, and event management platforms.
             </p>
             <p>
               We do not sell your personal data to third parties. We may disclose information if required by law or to protect our legal rights.
@@ -52,7 +52,7 @@ const Privacy: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-2xl font-black text-white tracking-tighter border-b border-white/5 pb-4 italic">4. Security</h2>
             <p>
-              We implement high-level security measures, including 256-bit SSL encryption, to protect your data from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.
+              We implement high level security measures, including 256 bit SSL encryption, to protect your data from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure.
             </p>
           </div>
 

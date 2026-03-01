@@ -64,7 +64,7 @@ const Checkout: React.FC = () => {
               <div className="bg-white/5 p-10 md:p-16 rounded-sm border border-white/10 shadow-2xl reveal">
                 <div className="flex items-center justify-between mb-10 border-b border-white/5 pb-6">
                   <h3 className="text-2xl font-black tracking-tighter text-white italic">Payment Method</h3>
-                  <div className="flex gap-4 opacity-40 grayscale">
+                  <div className="flex gap-4">
                     <CreditCard className="w-6 h-6" />
                     <Lock className="w-6 h-6" />
                   </div>

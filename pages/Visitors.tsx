@@ -34,14 +34,14 @@ const Visitors: React.FC = () => {
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Visit the Expo?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
-              AEEE 2026 offers unparalleled access to high-growth markets and strategic partnerships that define the future of international trade.
+              AEEE 2026 offers unparalleled access to high growth markets and strategic partnerships that define the future of international trade.
             </p>
             <div className="space-y-6">
               {[
                 "Direct access to 300+ exhibiting businesses from 8 emerging economies.",
-                "Exclusive insights into high-impact sectors like Fintech, Energy, and AI.",
-                "Strategic B2B matchmaking sessions with pre-qualified partners.",
-                "High-level networking with government officials and trade commissioners."
+                "Exclusive insights into high impact sectors like Fintech, Energy, and AI.",
+                "Strategic B2B matchmaking sessions with pre qualified partners.",
+                "High level networking with government officials and trade commissioners."
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 group">
                   <CheckCircle2 className="w-6 h-6 text-brand-coral flex-shrink-0 mt-1" />
@@ -54,7 +54,7 @@ const Visitors: React.FC = () => {
             <img 
               src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=1000" 
               alt="Expo Hall" 
-              className="group-hover:scale-105 transition-transform duration-1000 grayscale opacity-40 hover:grayscale-0 hover:opacity-100" 
+              className="group-hover:scale-105 transition-transform duration-1000 opacity-100" 
             />
           </div>
         </div>
@@ -66,7 +66,7 @@ const Visitors: React.FC = () => {
             {[
               { title: "Investors", desc: "Venture capitalists and private equity firms seeking frontier market opportunities." },
               { title: "Trade Leaders", desc: "Import/Export executives looking for reliable supply chain partners in Asia." },
-              { title: "Innovators", desc: "Tech founders and R&D leaders exploring cross-border collaboration." }
+              { title: "Innovators", desc: "Tech founders and R&D leaders exploring cross border collaboration." }
             ].map((profile, i) => (
               <div key={i} className="glass-card p-12 border border-white/10 hover:border-brand-coral transition-all text-center">
                 <Users className="w-12 h-12 text-brand-coral mx-auto mb-8" />
@@ -108,8 +108,8 @@ const Visitors: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Visitor Pass Options</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: "One-Day Pass", price: "CAD 150", features: ["Exhibition Access", "General Sessions", "Networking App"] },
-              { name: "Full Event Pass", price: "CAD 350", features: ["3-Day Access", "All Conference Tracks", "Gala Dinner Invite"] },
+              { name: "One Day Pass", price: "CAD 150", features: ["Exhibition Access", "General Sessions", "Networking App"] },
+              { name: "Full Event Pass", price: "CAD 350", features: ["3 Day Access", "All Conference Tracks", "Gala Dinner Invite"] },
               { name: "VIP Executive", price: "CAD 850", features: ["Priority Access", "VIP Lounge", "Private Matchmaking"] }
             ].map((pass, i) => (
               <div key={i} className={`p-12 rounded-sm border transition-all ${i === 1 ? 'bg-brand-coral border-brand-coral shadow-2xl scale-105' : 'bg-white/5 border-white/10 hover:border-brand-coral'}`}>
@@ -137,22 +137,22 @@ const Visitors: React.FC = () => {
             <Clock className="w-10 h-10 text-brand-coral" />
             <h4 className="text-xl font-black text-white tracking-tighter italic">Opening Hours</h4>
             <p className="text-white/40 text-sm italic font-medium leading-relaxed">
-              Oct 15-17, 2026<br/>
-              09:00 AM - 06:00 PM Daily
+              Oct 15 17, 2026<br/>
+              09:00 AM   06:00 PM Daily
             </p>
           </div>
           <div className="space-y-6">
             <CheckCircle2 className="w-10 h-10 text-brand-coral" />
             <h4 className="text-xl font-black text-white tracking-tighter italic">Check-In</h4>
             <p className="text-white/40 text-sm italic font-medium leading-relaxed">
-              Digital badge required for entry. On-site printing available at Hall A.
+              Digital badge required for entry. On site printing available at Hall A.
             </p>
           </div>
           <div className="space-y-6">
             <ShieldCheck className="w-10 h-10 text-brand-coral" />
             <h4 className="text-xl font-black text-white tracking-tighter italic">On-Site Services</h4>
             <p className="text-white/40 text-sm italic font-medium leading-relaxed">
-              Free Wi-Fi, Business Center, Multi-lingual Concierge, and Prayer Rooms.
+              Free Wi Fi, Business Center, Multi lingual Concierge, and Prayer Rooms.
             </p>
           </div>
         </div>

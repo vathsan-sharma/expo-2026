@@ -28,14 +28,14 @@ export const HIGHLIGHTS: Feature[] = [
 ];
 
 export const SECTORS: Sector[] = [
-  { id: 'tourism', title: 'Tourism & Hospitality', description: 'Asia – Canada Travel links; Tourism & Travel Investments.', icon: <Palmtree />, subsectors: ['Tourism Infrastructure', 'Sustainable Travel', 'Hospitality Tech'] },
-  { id: 'ai', title: 'AI & Technology', description: 'Smart Tech & Digital Innovation; Asia – CanadaTech Collaboration.', icon: <Cpu />, subsectors: ['SaaS & FinTech', 'Smart City Solutions', 'Cross-border R&D'] },
+  { id: 'tourism', title: 'Tourism & Hospitality', description: 'Asia Canada Travel links; Tourism & Travel Investments.', icon: <Palmtree />, subsectors: ['Tourism Infrastructure', 'Sustainable Travel', 'Hospitality Tech'] },
+  { id: 'ai', title: 'AI & Technology', description: 'Smart Tech & Digital Innovation; Asia Canada Tech Collaboration.', icon: <Cpu />, subsectors: ['SaaS & FinTech', 'Smart City Solutions', 'Cross-border R&D'] },
   { id: 'lifestyle', title: 'Lifestyle', description: 'Fashion & Jewelry; Precious stones; Porcelain products.', icon: <Gem />, subsectors: ['Ethical Fashion', 'Gems & Jewelry', 'Luxury Goods'] },
   { id: 'energy', title: 'Energy & Sustainability', description: 'Oil & Gas Innovations; Clean tech; Green Partnerships.', icon: <Droplets />, subsectors: ['Renewables', 'Carbon Management', 'Green Infrastructure'] },
-  { id: 'partnerships', title: 'Partnerships & Expansion', description: 'Canada– Asia Trade alliances and joint ventures; Market Growth.', icon: <Handshake />, subsectors: ['Joint Ventures', 'Regulatory Navigation', 'Strategic Alliances'] },
+  { id: 'partnerships', title: 'Partnerships & Expansion', description: 'Canada Asia Trade alliances and joint ventures; Market Growth.', icon: <Handshake />, subsectors: ['Joint Ventures', 'Regulatory Navigation', 'Strategic Alliances'] },
   { id: 'agriculture', title: 'Agriculture & Food Security', description: 'Agro tech & Sustainable Food Systems.', icon: <Leaf />, subsectors: ['Precision Farming', 'Supply Chain Tech', 'Food Export'] },
   { id: 'knowledge', title: 'Knowledge Exchange', description: 'Research Collaboration; Global talent development.', icon: <GraduationCap />, subsectors: ['EdTech', 'Corporate Training', 'Academic Research'] },
-  { id: 'trade', title: 'Trade & Investment', description: 'Supply chain integration; Imports & Exports; Canada– Asia Investment Ties.', icon: <BarChart3 />, subsectors: ['Trade Finance', 'FDI Consulting', 'Global Logistics'] }
+  { id: 'trade', title: 'Trade & Investment', description: 'Supply chain integration; Imports & Exports; Canada Asia Investment Ties.', icon: <BarChart3 />, subsectors: ['Trade Finance', 'FDI Consulting', 'Global Logistics'] }
 ];
 
 export const COUNTRIES: Country[] = [
@@ -90,7 +90,7 @@ export const COUNTRIES: Country[] = [
     flag: '🇵🇰', 
     summary: 'Agriculture | Textiles, Cement.', 
     strengths: ['Agriculture', 'Textiles', 'Cement'],
-    investmentAreas: ['Special Economic Zones', 'IT Services', 'Agro-processing'],
+    investmentAreas: ['Special Economic Zones', 'IT Services', 'Agro processing'],
     tradeOpportunities: ['Textile Export', 'Surgical Instruments', 'Software Dev']
   },
   { 
@@ -99,7 +99,7 @@ export const COUNTRIES: Country[] = [
     flag: '🇻🇳', 
     summary: 'Manufacturing, Electronics | Agriculture.', 
     strengths: ['Manufacturing', 'Electronics', 'Agriculture'],
-    investmentAreas: ['High-tech Manufacturing', 'Logistics Hubs', 'Energy Transition'],
+    investmentAreas: ['High tech Manufacturing', 'Logistics Hubs', 'Energy Transition'],
     tradeOpportunities: ['Electronics Supply Chain', 'Footwear Export', 'Coffee Trade']
   },
   { 
@@ -124,15 +124,26 @@ export const PARTNER_SKYLINES: Record<string, string> = {
   malaysia: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200"
 };
 
+export const SECTOR_IMAGES: Record<string, string> = {
+  tourism: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800",
+  ai: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+  lifestyle: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800",
+  energy: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+  partnerships: "https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&q=80&w=800",
+  agriculture: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800",
+  knowledge: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800",
+  trade: "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=800"
+};
+
 export const IMPACT_STATS: Milestone[] = [
-  { value: '10', label: 'Countries Represented', icon: <Globe /> },
-  { value: '41', label: 'International Exhibitors', icon: <Briefcase /> },
-  { value: '1040+', label: 'Expected Attendees', icon: <Users /> },
-  { value: '208+', label: 'B2B Meetings', icon: <MessageSquare /> }
+  { value: '8', label: 'Countries', icon: <Globe /> },
+  { value: '300+', label: 'Exhibitors', icon: <Briefcase /> },
+  { value: '50,000+', label: 'Visitors', icon: <Users /> },
+  { value: '40+', label: 'Sessions', icon: <Mic2 /> }
 ];
 
 export const GLOBAL_REACH = [
-  { region: 'North America', value: 1 },
+  { region: 'Canada', value: 1 },
   { region: 'Europe', value: 0 },
   { region: 'Asia Pacific', value: 1 },
   { region: 'Africa', value: 0 },
@@ -140,13 +151,13 @@ export const GLOBAL_REACH = [
 ];
 
 export const SPEAKERS: Speaker[] = [
-  { id: '1', name: 'TBA', role: 'Technology & Innovation Leader', company: 'Global Tech Corp', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200', topic: 'AI in Trade', expertise: ['AI in Trade', 'Digital Innovation', 'Future Tech'] },
-  { id: '2', name: 'TBA', role: 'International Trade Expert', company: 'World Trade Org', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200', topic: 'Cross-border Commerce', expertise: ['Global Trade', 'Market Strategy', 'Policy'] },
-  { id: '3', name: 'TBA', role: 'Investment & Finance Authority', company: 'Finanace Group', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200', topic: 'FDI Opportunities', expertise: ['Investment', 'Emerging Markets', 'FDI'] },
+  { id: '1', name: 'TBA', role: 'Technology & Innovation Leader', company: 'Global Tech Corp', image: '', topic: 'AI in Trade', expertise: ['AI in Trade', 'Digital Innovation', 'Future Tech'] },
+  { id: '2', name: 'TBA', role: 'International Trade Expert', company: 'World Trade Org', image: '', topic: 'Cross border Commerce', expertise: ['Global Trade', 'Market Strategy', 'Policy'] },
+  { id: '3', name: 'TBA', role: 'Investment & Finance Authority', company: 'Finanace Group', image: '', topic: 'FDI Opportunities', expertise: ['Investment', 'Emerging Markets', 'FDI'] },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'Amarjeet K', role: 'CEO', company: 'IndoCan Trade Solutions', quote: "The Asia's Emerging Economies Expo gave our company access to new markets and investors we wouldn't have met otherwise. Truly a game-changer!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
+  { id: '1', name: 'Amarjeet K', role: 'CEO', company: 'IndoCan Trade Solutions', quote: "The Asia's Emerging Economies Expo gave our company access to new markets and investors we wouldn't have met otherwise. Truly a game changer!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
 ];
 
 export const FAQS: FAQItem[] = [
@@ -164,7 +175,7 @@ export const MILESTONES: Milestone[] = [
 
 export const EXPERIENCE_FEATURES: Feature[] = [
   { title: 'Keynote Talks', description: 'Policymakers and industry leaders shaping Asia’s growth.', icon: <Mic2 /> },
-  { title: 'B2B Matchmaking', description: 'Pre-arranged meetings between buyers, investors and exhibitors.', icon: <MessageSquare /> },
+  { title: 'B2B Matchmaking', description: 'Pre arranged meetings between buyers, investors and exhibitors.', icon: <MessageSquare /> },
   { title: 'Country Presentations', description: 'Deep dives into strategies, flagship projects and incentives.', icon: <Presentation /> },
   { title: 'Project Discussions', description: 'Focused sessions on trade, infrastructure, technology and investment deals.', icon: <Zap /> }
 ];

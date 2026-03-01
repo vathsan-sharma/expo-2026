@@ -34,11 +34,11 @@ const Sponsors: React.FC = () => {
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Partner as a Sponsor?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
-              Sponsorship at AEEE 2026 provides a unique opportunity to demonstrate leadership and gain elite recognition within the Asia-Canada corridor.
+              Sponsorship at AEEE 2026 provides a unique opportunity to demonstrate leadership and gain elite recognition within the Asia Canada corridor.
             </p>
             <div className="grid gap-10">
               {[
-                { icon: <Megaphone />, title: 'Brand Visibility', text: 'Elite recognition across all digital and on-site event assets.' },
+                { icon: <Megaphone />, title: 'Brand Visibility', text: 'Elite recognition across all digital and on site event assets.' },
                 { icon: <BarChart3 />, title: 'Strategic Alignment', text: 'Align with core themes of global trade, innovation, and sustainability.' },
                 { icon: <Users />, title: 'Curated Networking', text: 'Access private sessions with government, investors and corporate leaders.' }
               ].map((item, idx) => (
@@ -97,7 +97,7 @@ const Sponsors: React.FC = () => {
         {/* Placeholder Logos */}
         <div className="bg-white/5 rounded-sm p-16 md:p-24 text-center reveal border border-white/10 mb-48">
           <h3 className="text-2xl font-black text-white tracking-tighter mb-16 italic">Our Sponsors and Partners</h3>
-          <div className="flex flex-wrap justify-center gap-12 opacity-20 grayscale">
+          <div className="flex flex-wrap justify-center gap-12">
             {[1, 2, 3, 4, 5, 6].map(i => (
               <div key={i} className="w-32 h-16 bg-white/10 rounded-sm flex items-center justify-center font-black text-xs">LOGO {i}</div>
             ))}

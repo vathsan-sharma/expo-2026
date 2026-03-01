@@ -23,7 +23,7 @@ const TargetSectors: React.FC = () => {
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Economic Engines</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Target Sectors</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            Focusing on the high-growth industries that define the future of the Asia-Canada trade corridor.
+            Focusing on the high growth industries that define the future of the Asia Canada trade corridor.
           </p>
         </div>
       </section>

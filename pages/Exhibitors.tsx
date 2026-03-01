@@ -34,13 +34,13 @@ const Exhibitors: React.FC = () => {
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Exhibit?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
-              AEEE 2026 is the definitive platform for businesses looking to scale their operations across the Asia-Pacific corridor.
+              AEEE 2026 is the definitive platform for businesses looking to scale their operations across the Asia Pacific corridor.
             </p>
             <div className="grid gap-8">
               {[
                 { icon: <Briefcase />, title: 'Market Presence', text: 'Showcase products and services to Canadian investors and global buyers.' },
-                { icon: <Users />, title: 'Networking Lounges', text: 'Connect in industry-specific lounges for each target sector.' },
-                { icon: <Star />, title: 'VIP Engagement', text: 'Engage at gala dinners, country presentations and project-focused discussions.' }
+                { icon: <Users />, title: 'Networking Lounges', text: 'Connect in industry specific lounges for each target sector.' },
+                { icon: <Star />, title: 'VIP Engagement', text: 'Engage at gala dinners, country presentations and project focused discussions.' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-8 group">
                   <div className="w-16 h-16 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-brand-coral flex-shrink-0 group-hover:bg-brand-coral group-hover:text-white transition-all shadow-sm">

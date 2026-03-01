@@ -29,7 +29,7 @@ const Success: React.FC = () => {
                   { label: "Attendee", value: "Alex Thompson" },
                   { label: "Pass Type", value: "Full Event Pass" },
                   { label: "Amount Paid", value: "CAD 395.50" },
-                  { label: "Order ID", value: "#AEEE-88291-X" }
+                  { label: "Order ID", value: "#AEEE 88291 X" }
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between items-center text-[11px] font-bold tracking-tight italic">
                     <span className="text-white/40 italic">{item.label}</span>
@@ -43,7 +43,7 @@ const Success: React.FC = () => {
               <div className="space-y-4">
                 {[
                   { label: "Event", value: "AEEE 2026" },
-                  { label: "Dates", value: "Oct 15-17, 2026" },
+                  { label: "Dates", value: "Oct 15 17, 2026" },
                   { label: "Venue", value: "Enercare Centre" },
                   { label: "City", value: "Toronto, Canada" }
                 ].map((item, i) => (
