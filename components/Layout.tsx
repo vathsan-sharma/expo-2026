@@ -24,7 +24,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const navItems = [
     { label: 'Home', path: '/' },
-    { label: 'Participate', path: '#', subItems: [
+    { label: 'Registration', path: '#', subItems: [
       { label: 'Join as visitor', path: '/visitors' },
       { label: 'Join as exhibitor', path: '/exhibitors' },
       { label: 'Join as sponsor', path: '/sponsors' },

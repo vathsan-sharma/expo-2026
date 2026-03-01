@@ -7,7 +7,7 @@ import {
   Zap, Presentation, MessageSquare, ChevronRight,
   Target, Eye, TrendingUp
 } from 'lucide-react';
-import { COUNTRIES, SECTORS, EXPERIENCE_FEATURES, PARTNER_SKYLINES, SECTOR_IMAGES, IMPACT_STATS, SPEAKERS, TESTIMONIALS } from '../constants';
+import { COUNTRIES, SECTORS, EXPERIENCE_FEATURES, PARTNER_SKYLINES, SECTOR_IMAGES, IMPACT_STATS, SPEAKERS } from '../constants';
 
 const CountUp: React.FC<{ end: string, duration?: number }> = ({ end, duration = 2000 }) => {
   const [count, setCount] = useState(0);
@@ -65,12 +65,12 @@ const Home: React.FC = () => {
             playsInline 
             className="w-full h-full object-cover opacity-100"
           >
-            <source src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Philippines%20(4).mp4" type="video/mp4" />
+            <source src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Philippines%20(6).mp4" type="video/mp4" />
           </video>
         </div>
 
         {/* Content Overlay - Top Left Aligned with more space */}
-        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-start pt-48 pb-32">
+        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-start pt-32 pb-32">
           <div className="space-y-12">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
