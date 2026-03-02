@@ -8,7 +8,7 @@ const TargetSectors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Professional Header */}
-      <section className="relative pt-48 pb-32 w-full flex items-center justify-center overflow-hidden">
+      <section className="relative pt-32 md:pt-48 pb-16 md:pb-32 w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-brand-navy"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(242,125,38,0.1),transparent_70%)]"></div>
@@ -19,7 +19,7 @@ const TargetSectors: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+          className="relative z-10 container-custom text-center"
         >
           <span className="text-brand-coral font-bold tracking-[0.5em] text-xs mb-8 block uppercase">Strategic Economic Engines</span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-white mb-10 tracking-tighter leading-[0.9] uppercase">
@@ -32,7 +32,7 @@ const TargetSectors: React.FC = () => {
       </section>
 
       {/* Modern Grid Layout - Website Friendly */}
-      <section className="max-w-7xl mx-auto px-6 relative z-20">
+      <section className="container-custom relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SECTORS.map((sector, idx) => (
             <motion.div 
@@ -63,7 +63,6 @@ const TargetSectors: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-px bg-brand-coral"></div>
-                    <span className="text-brand-coral font-bold text-[10px] tracking-[0.3em] uppercase">Priority Sector</span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tighter leading-none uppercase">
                     {sector.title}
@@ -96,7 +95,7 @@ const TargetSectors: React.FC = () => {
       </section>
 
       {/* Call to Action - Clean & Open */}
-      <section className="py-48 max-w-5xl mx-auto px-6 text-center">
+      <section className="py-24 md:py-48 container-custom max-w-5xl text-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +104,7 @@ const TargetSectors: React.FC = () => {
         >
            <h3 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase">Ready to <span className="text-brand-coral">Expand?</span></h3>
            <p className="text-white/40 text-lg md:text-xl font-medium leading-relaxed max-w-2xl mx-auto">
-             Join 300+ exhibitors and 50,000+ attendees in the heart of Toronto to redefine your global strategy.
+             Join 300+ exhibitors and 15,000+ attendees in the heart of Toronto to redefine your global strategy.
            </p>
            <div className="flex flex-col sm:flex-row gap-6 justify-center">
              <Link to="/registration" className="bg-brand-coral text-white px-12 py-5 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-2xl uppercase">

@@ -44,7 +44,7 @@ const Success: React.FC = () => {
                 {[
                   { label: "Event", value: "AEEE 2026" },
                   { label: "Dates", value: "Oct 15 17, 2026" },
-                  { label: "Venue", value: "Enercare Centre" },
+                  { label: "Venue", value: "Exhibition Place" },
                   { label: "City", value: "Toronto, Canada" }
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between items-center text-[11px] font-bold tracking-tight italic">

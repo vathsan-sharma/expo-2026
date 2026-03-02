@@ -17,24 +17,24 @@ const About: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-24 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
+        <div className="container-custom relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Our Vision</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none">About the Expo</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            AEEE 2026 is the definitive platform for cross border trade, innovation, and strategic investment between Canada and Asia's emerging economies.
+            AEEE 2026 is the definitive platform for cross border trade, innovation, and strategic investment between Canada and Asia's powerful economies.
           </p>
         </div>
       </section>
 
       {/* About AEEE 2026 */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center mb-48">
+      <section className="py-16 md:py-32 container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-24 md:mb-48">
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">AEEE 2026</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-8 font-medium italic">
-              Asia's Emerging Economies Expo (AEEE) 2026 is more than just a trade show; it is a catalyst for global economic integration.
+              Asia's Powerful Economies Expo (AEEE) 2026 is more than just a trade show; it is a catalyst for global economic integration.
             </p>
             <p className="text-white/40 text-lg leading-relaxed mb-12 italic font-medium">
               Hosted in Toronto, Canada's fastest growing tech and financial hub, the expo serves as a strategic bridge for businesses looking to navigate the complexities of international expansion and tap into the world's most dynamic growth engines.
@@ -51,8 +51,8 @@ const About: React.FC = () => {
         </div>
 
         {/* Vision & Mission */}
-        <div className="grid md:grid-cols-2 gap-12 mb-48 reveal">
-          <div className="glass-card p-12 md:p-20 border border-white/10 space-y-8 group hover:border-brand-coral transition-all">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-24 md:mb-48 reveal">
+          <div className="glass-card p-8 md:p-20 border border-white/10 space-y-8 group hover:border-brand-coral transition-all">
             <Target className="w-16 h-16 text-brand-coral" />
             <h3 className="text-4xl font-black text-white tracking-tighter italic">Our Mission</h3>
             <p className="text-white/40 text-lg italic font-medium leading-relaxed">
@@ -69,8 +69,8 @@ const About: React.FC = () => {
         </div>
 
         {/* Who You Will Meet */}
-        <div className="mb-48 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Who You Will Meet</h2>
+        <div className="mb-24 md:mb-48 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic">Who You Will Meet</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Policy Makers", desc: "Government ministers and trade commissioners from 8+ nations." },
@@ -87,8 +87,8 @@ const About: React.FC = () => {
         </div>
 
         {/* How the Expo Is Structured */}
-        <div className="bg-white/5 rounded-sm p-16 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-48">
-          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tighter leading-none text-center italic">Expo Structure</h2>
+        <div className="bg-white/5 rounded-sm p-12 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-24 md:mb-48">
+          <h2 className="text-4xl md:text-7xl font-black mb-12 md:mb-16 tracking-tighter leading-none text-center italic">Expo Structure</h2>
           <div className="grid md:grid-cols-3 gap-12">
             {[
               { icon: <LayoutGrid />, title: "Exhibition Zones", text: "National pavilions and sector specific clusters showcasing innovation." },
@@ -105,9 +105,9 @@ const About: React.FC = () => {
         </div>
 
         {/* Organizers and Partners */}
-        <div className="mb-48 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Organizers & Partners</h2>
-          <div className="flex flex-wrap justify-center gap-16">
+        <div className="mb-24 md:mb-48 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic">Organizers & Partners</h2>
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
             {[1, 2, 3, 4, 5].map(i => (
               <div key={i} className="w-40 h-20 bg-white/10 rounded-sm flex items-center justify-center font-bold text-xs">Partner {i}</div>
             ))}

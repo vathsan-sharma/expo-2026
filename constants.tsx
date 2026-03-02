@@ -7,11 +7,11 @@ import {
 import { Sector, Country, Feature, Milestone, Speaker, Testimonial, FAQItem } from './types';
 
 export const CONTACT_INFO = {
-  name: "Asia’s Emerging Economies Expo 2026",
+  name: "Asia’s Powerful Economies Expo 2026",
   tagline: "Gateway to Asia’s Expansion",
   phone: '(416) 902 9462',
   email: 'kula@csbconvention.org',
-  address: '100 Princess Blvd, Toronto, ON, M6K 3C3',
+  address: "Exhibition Place - 100 Princes' Blvd, Toronto, ON M6K 3C3",
   dates: 'October 15–17, 2026',
   organizer: 'CSB Convention'
 };
@@ -42,7 +42,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'canada', 
     name: 'Canada', 
-    flag: '🇨🇦', 
+    flag: '', 
     summary: 'Natural resources, Manufacturing, Technology.', 
     strengths: ['Natural Resources', 'Manufacturing', 'Technology'],
     investmentAreas: ['Clean Energy', 'AI & Quantum Computing', 'Critical Minerals'],
@@ -51,7 +51,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'srilanka', 
     name: 'Sri Lanka', 
-    flag: '🇱🇰', 
+    flag: '', 
     summary: 'Apparel | IT, Tourism | Education.', 
     strengths: ['Apparel', 'IT', 'Tourism', 'Education'],
     investmentAreas: ['Port City Development', 'Renewable Energy', 'Tech Parks'],
@@ -60,7 +60,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'philippines', 
     name: 'Philippines', 
-    flag: '🇵🇭', 
+    flag: '', 
     summary: 'Energy | BPO, Fintech.', 
     strengths: ['Energy', 'BPO', 'Fintech'],
     investmentAreas: ['Digital Infrastructure', 'Renewable Energy', 'Manufacturing'],
@@ -69,7 +69,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'indonesia', 
     name: 'Indonesia', 
-    flag: '🇮🇩', 
+    flag: '', 
     summary: 'Natural Resources, E-commerce, Infrastructure.', 
     strengths: ['Natural Resources', 'E-commerce', 'Infrastructure'],
     investmentAreas: ['Nickel Processing', 'New Capital City', 'Digital Economy'],
@@ -78,7 +78,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'thailand', 
     name: 'Thailand', 
-    flag: '🇹🇭', 
+    flag: '', 
     summary: 'Automotive | Tourism, Technology.', 
     strengths: ['Automotive', 'Tourism', 'Technology'],
     investmentAreas: ['Eastern Economic Corridor', 'EV Manufacturing', 'Smart Electronics'],
@@ -87,7 +87,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'pakistan', 
     name: 'Pakistan', 
-    flag: '🇵🇰', 
+    flag: '', 
     summary: 'Agriculture | Textiles, Cement.', 
     strengths: ['Agriculture', 'Textiles', 'Cement'],
     investmentAreas: ['Special Economic Zones', 'IT Services', 'Agro processing'],
@@ -96,7 +96,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'vietnam', 
     name: 'Vietnam', 
-    flag: '🇻🇳', 
+    flag: '', 
     summary: 'Manufacturing, Electronics | Agriculture.', 
     strengths: ['Manufacturing', 'Electronics', 'Agriculture'],
     investmentAreas: ['High tech Manufacturing', 'Logistics Hubs', 'Energy Transition'],
@@ -105,7 +105,7 @@ export const COUNTRIES: Country[] = [
   { 
     id: 'malaysia', 
     name: 'Malaysia', 
-    flag: '🇲🇾', 
+    flag: '', 
     summary: 'Oil & Gas, Finance.', 
     strengths: ['Oil & Gas', 'Finance'],
     investmentAreas: ['Semiconductor Hub', 'Islamic Finance', 'Digital Transformation'],
@@ -138,7 +138,7 @@ export const SECTOR_IMAGES: Record<string, string> = {
 export const IMPACT_STATS: Milestone[] = [
   { value: '8', label: 'Countries', icon: <Globe /> },
   { value: '300+', label: 'Exhibitors', icon: <Briefcase /> },
-  { value: '50,000+', label: 'Visitors', icon: <Users /> },
+  { value: '15,000+', label: 'Visitors', icon: <Users /> },
   { value: '40+', label: 'Sessions', icon: <Mic2 /> }
 ];
 
@@ -157,7 +157,7 @@ export const SPEAKERS: Speaker[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'Amarjeet K', role: 'CEO', company: 'IndoCan Trade Solutions', quote: "The Asia's Emerging Economies Expo gave our company access to new markets and investors we wouldn't have met otherwise. Truly a game changer!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
+  { id: '1', name: 'Amarjeet K', role: 'CEO', company: 'IndoCan Trade Solutions', quote: "The Asia's Powerful Economies Expo gave our company access to new markets and investors we wouldn't have met otherwise. Truly a game changer!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
 ];
 
 export const FAQS: FAQItem[] = [
@@ -170,7 +170,7 @@ export const FAQS: FAQItem[] = [
 export const MILESTONES: Milestone[] = [
   { value: '8', label: 'Countries', icon: <Globe /> },
   { value: '300', label: 'Businesses', icon: <Briefcase /> },
-  { value: '50,000+', label: 'Expected Attendees', icon: <Users /> }
+  { value: '15,000+', label: 'Expected Attendees', icon: <Users /> }
 ];
 
 export const EXPERIENCE_FEATURES: Feature[] = [

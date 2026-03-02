@@ -19,7 +19,7 @@ const News: React.FC = () => {
       category: "Announcement",
       date: "Oct 12, 2025",
       title: "Toronto Confirmed as Host City for AEEE 2026",
-      desc: "The Enercare Centre will serve as the official venue for Asia's largest emerging economies showcase in Canada.",
+      desc: "The Exhibition Place will serve as the official venue for Asia's largest powerful economies showcase in Canada.",
       image: "https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&q=80&w=800"
     },
     {
@@ -79,7 +79,7 @@ const News: React.FC = () => {
             <div>
               <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Insights & Stories</h2>
               <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
-                Deep dives into the trends shaping emerging markets, from the rise of Fintech in SE Asia to the future of green manufacturing.
+                Deep dives into the trends shaping powerful markets, from the rise of Fintech in SE Asia to the future of green manufacturing.
               </p>
               <div className="space-y-8">
                 {[

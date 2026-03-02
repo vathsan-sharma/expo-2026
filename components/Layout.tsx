@@ -50,8 +50,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <header 
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 w-[95%] max-w-[1400px] ${
           isScrolled 
-            ? 'bg-brand-navy/95 backdrop-blur-2xl border border-white/10 py-2 px-6 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)]' 
-            : 'bg-brand-navy/90 lg:bg-brand-navy/20 backdrop-blur-xl lg:backdrop-blur-md border border-white/5 py-3 px-10 rounded-3xl'
+            ? 'bg-brand-navy/95 backdrop-blur-2xl border border-white/10 py-2 px-4 sm:px-6 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.3)]' 
+            : 'bg-brand-navy/90 lg:bg-brand-navy/20 backdrop-blur-xl lg:backdrop-blur-md border border-white/5 py-3 px-6 sm:px-10 rounded-3xl'
         }`}
       >
         <div className="flex items-center justify-between">
@@ -244,8 +244,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
       {/* Footer */}
       <footer className="bg-brand-navy text-white/60 pt-24 pb-12 border-t border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-24 text-center md:text-left">
+        <div className="container-custom relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-24 text-center sm:text-left">
             <div>
               <h4 className="text-white font-bold tracking-tight text-sm mb-8">Navigation</h4>
               <ul className="space-y-4">
@@ -264,7 +264,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <li><Link to="/terms" className="text-white/40 hover:text-brand-coral transition-colors text-xs font-medium tracking-tight">Terms & Conditions</Link></li>
               </ul>
             </div>
-            <div className="col-span-2 md:col-span-1">
+            <div className="sm:col-span-2 lg:col-span-1">
               <h4 className="text-white font-bold tracking-tight text-sm mb-8">Contact</h4>
               <ul className="space-y-4">
                 <li className="text-white/40 text-xs font-medium tracking-tight">{CONTACT_INFO.email}</li>
@@ -283,7 +283,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 referrerPolicy="no-referrer"
               />
               <span className="text-[10px] text-white/60 font-bold tracking-[0.2em] uppercase">
-                Asia's Emerging Economies Expo
+                Asia's Powerful Economies Expo
               </span>
             </Link>
 
@@ -297,7 +297,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
           
           <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[11px] font-medium tracking-tight text-white/40">
-            <p>&copy; 2026 Asia’s Emerging Economies Expo. All Rights Reserved.</p>
+            <p>&copy; 2026 Asia’s Powerful Economies Expo. All Rights Reserved.</p>
             <p className="mt-4 md:mt-0 space-x-8">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <span className="text-white/10">|</span>

@@ -17,20 +17,20 @@ const Visitors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-24 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
+        <div className="container-custom relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Visitor Information</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none">Visitors & Attendees</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
-            Join thousands of global leaders, investors, and innovators at Asia's premier emerging economies showcase in Toronto.
+            Join thousands of global leaders, investors, and innovators at Asia's premier powerful economies showcase in Toronto.
           </p>
         </div>
       </section>
 
       {/* Why Visit */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center mb-48">
+      <section className="py-16 md:py-32 container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-24 md:mb-48">
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Visit the Expo?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
@@ -38,7 +38,7 @@ const Visitors: React.FC = () => {
             </p>
             <div className="space-y-6">
               {[
-                "Direct access to 300+ exhibiting businesses from 8 emerging economies.",
+                "Direct access to 300+ exhibiting businesses from 8 powerful economies.",
                 "Exclusive insights into high impact sectors like Fintech, Energy, and AI.",
                 "Strategic B2B matchmaking sessions with pre qualified partners.",
                 "High level networking with government officials and trade commissioners."
@@ -60,8 +60,8 @@ const Visitors: React.FC = () => {
         </div>
 
         {/* Ideal Visitors */}
-        <div className="mb-48 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Ideal Visitors</h2>
+        <div className="mb-24 md:mb-48 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic">Ideal Visitors</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Investors", desc: "Venture capitalists and private equity firms seeking frontier market opportunities." },
@@ -78,9 +78,9 @@ const Visitors: React.FC = () => {
         </div>
 
         {/* What to Expect */}
-        <div className="bg-white/5 rounded-sm p-16 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-48">
+        <div className="bg-white/5 rounded-sm p-12 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-24 md:mb-48">
           <h2 className="text-4xl md:text-7xl font-black mb-12 tracking-tighter leading-none text-center italic">What to Expect</h2>
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
             <div className="space-y-8">
               <h3 className="text-2xl font-black text-brand-coral tracking-tighter italic">The Experience</h3>
               <p className="text-white/60 text-lg font-medium italic leading-relaxed">
@@ -104,9 +104,9 @@ const Visitors: React.FC = () => {
         </div>
 
         {/* Visitor Pass Options */}
-        <div className="mb-48 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Visitor Pass Options</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mb-24 md:mb-48 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic">Visitor Pass Options</h2>
+          <div className="grid md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { name: "One Day Pass", price: "CAD 150", features: ["Exhibition Access", "General Sessions", "Networking App"] },
               { name: "Full Event Pass", price: "CAD 350", features: ["3 Day Access", "All Conference Tracks", "Gala Dinner Invite"] },

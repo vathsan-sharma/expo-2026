@@ -20,8 +20,8 @@ const FAQ: React.FC = () => {
     {
       category: "General",
       questions: [
-        { q: "What is Asia's Emerging Economies Expo (AEEE) 2026?", a: "AEEE 2026 is a premier international trade event in Toronto, Canada, showcasing high growth opportunities across Asia's most dynamic emerging markets." },
-        { q: "Where and when will the event take place?", a: "The expo will be held at the Enercare Centre, Toronto, from October 15 17, 2026." },
+        { q: "What is Asia's Powerful Economies Expo (AEEE) 2026?", a: "AEEE 2026 is a premier international trade event in Toronto, Canada, showcasing high growth opportunities across Asia's most dynamic powerful markets." },
+        { q: "Where and when will the event take place?", a: "The expo will be held at the Exhibition Place, Toronto, from October 15 17, 2026." },
         { q: "Who should attend AEEE 2026?", a: "The event is designed for investors, trade leaders, government officials, and business executives looking to scale operations in the Asia Canada corridor." }
       ]
     },
@@ -46,7 +46,7 @@ const FAQ: React.FC = () => {
       questions: [
         { q: "Do I need a visa to enter Canada?", a: "Visa requirements vary by country. Please check the official IRCC website for the latest information." },
         { q: "Are there recommended hotels near the venue?", a: "Yes, we have partnered with several hotels, including Hotel X Toronto, to offer exclusive rates for delegates." },
-        { q: "Is parking available at the Enercare Centre?", a: "Yes, the venue has extensive on site parking facilities available for a daily fee." }
+        { q: "Is parking available at the Exhibition Place?", a: "Yes, the venue has extensive on site parking facilities available for a daily fee." }
       ]
     }
   ];
@@ -54,9 +54,9 @@ const FAQ: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-24 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
+        <div className="container-custom relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Support Center</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">Frequently Asked Questions</h1>
           <p className="text-white/60 text-lg md:text-2xl max-w-4xl mx-auto italic font-medium leading-relaxed">
@@ -66,7 +66,7 @@ const FAQ: React.FC = () => {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-32 max-w-4xl mx-auto px-6">
+      <section className="py-16 md:py-32 container-custom max-w-4xl">
         <div className="space-y-24">
           {faqs.map((group, gIdx) => (
             <div key={gIdx} className="reveal">

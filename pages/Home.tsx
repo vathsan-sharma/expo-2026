@@ -13,7 +13,8 @@ const CountUp: React.FC<{ end: string, duration?: number }> = ({ end, duration =
   const [count, setCount] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
   const numericValue = parseInt(end.replace(/[^0-9]/g, ''));
-  const suffix = end.replace(/[0-9]/g, '');
+  const suffix = end.replace(/[0-9,]/g, '');
+  const hasComma = end.includes(',');
 
   useEffect(() => {
     if (!hasStarted) return;
@@ -30,12 +31,19 @@ const CountUp: React.FC<{ end: string, duration?: number }> = ({ end, duration =
     window.requestAnimationFrame(step);
   }, [numericValue, duration, hasStarted]);
 
+  const formatValue = (val: number) => {
+    if (hasComma) {
+      return val.toLocaleString();
+    }
+    return val.toString();
+  };
+
   return (
     <motion.span 
       onViewportEnter={() => setHasStarted(true)}
       viewport={{ once: true }}
     >
-      {count.toLocaleString()}{suffix}
+      {formatValue(count)}{suffix}
     </motion.span>
   );
 };
@@ -55,7 +63,7 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden bg-brand-navy">
       {/* 1. Simple & Impactful Hero Section */}
-      <section className="relative h-screen w-full bg-brand-navy overflow-hidden">
+      <section className="relative min-h-screen w-full bg-brand-navy overflow-hidden">
         {/* Background Visual - Full Screen Video */}
         <div className="absolute inset-0 z-0">
           <video 
@@ -63,14 +71,15 @@ const Home: React.FC = () => {
             loop 
             muted 
             playsInline 
+            preload="auto"
             className="w-full h-full object-cover opacity-100"
           >
             <source src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/Philippines%20(6).mp4" type="video/mp4" />
           </video>
         </div>
 
-        {/* Content Overlay - Top Left Aligned with more space */}
-        <div className="relative z-20 w-full h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-start pt-32 pb-32">
+        {/* Content Overlay - Bottom Left Aligned */}
+        <div className="relative z-20 w-full min-h-screen container-custom flex flex-col justify-end pb-24 md:pb-48">
           <div className="space-y-12">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
@@ -86,25 +95,10 @@ const Home: React.FC = () => {
                 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-[0.9] tracking-tighter drop-shadow-2xl uppercase"
               >
                 Asia's <br/>
-                Emerging <br/>
+                Powerful <br/>
                 Economies <br/>
                 <span className="text-brand-coral">Expo 2026</span>
               </motion.h1>
-            </motion.div>
-
-            {/* Primary Actions - Bottom Left */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Link to="/registration" className="bg-brand-coral text-white px-8 py-4 rounded-full font-black text-xs md:text-sm tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-2xl flex items-center justify-center gap-3 group uppercase">
-                Secure Your Pass <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/exhibitors" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-black text-xs md:text-sm tracking-widest hover:bg-white hover:text-brand-navy transition-all flex items-center justify-center uppercase">
-                Become an Exhibitor
-              </Link>
             </motion.div>
           </div>
         </div>
@@ -120,11 +114,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* 3. Event Quick Info Bar - Moved Up */}
-      <section className="py-20 bg-brand-navy relative z-30 -mt-10 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-white/5 border border-white/10 rounded-sm shadow-2xl p-10 md:p-16 overflow-hidden relative group">
+      <section className="py-12 md:py-20 bg-brand-navy relative z-30 -mt-12 md:-mt-20 px-4 sm:px-6">
+        <div className="container-custom">
+          <div className="bg-white/5 border border-white/10 rounded-sm shadow-2xl p-8 md:p-16 overflow-hidden relative group">
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-coral/10 blur-[150px] rounded-full -z-10"></div>
-            <div className="grid md:grid-cols-3 gap-12 items-center">
+            <div className="grid lg:grid-cols-4 gap-12 items-center">
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 rounded-sm bg-brand-coral flex items-center justify-center text-white shadow-xl">
                   <Calendar className="w-8 h-8" />
@@ -140,80 +134,35 @@ const Home: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-[10px] text-white/40 font-black uppercase tracking-[0.3em] mb-1">Venue</div>
-                  <div className="text-xl font-black text-white tracking-tight">Enercare Centre, Toronto</div>
+                  <div className="text-xl font-black text-white tracking-tight">Exhibition Place, Toronto</div>
                 </div>
               </div>
-              <div className="flex items-center justify-end">
-                <div className="text-right">
-                  <div className="text-[10px] text-white/40 font-black uppercase tracking-[0.3em] mb-3">Registration Status</div>
-                  <div className="inline-flex items-center gap-3 px-5 py-2 bg-brand-coral/20 border border-brand-coral/30 rounded-full">
-                    <span className="w-2 h-2 rounded-full bg-brand-coral animate-pulse"></span>
-                    <span className="text-xs font-black text-brand-coral uppercase">Now Open</span>
-                  </div>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 lg:col-span-2 justify-end">
+                <Link to="/registration" className="bg-brand-coral text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-brand-coral transition-all shadow-2xl flex items-center justify-center gap-3 group uppercase">
+                  Secure Your Pass <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link to="/exhibitors" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-black text-xs tracking-widest hover:bg-white hover:text-brand-navy transition-all flex items-center justify-center uppercase">
+                  Become an Exhibitor
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. About Section (Integrated from About.tsx) */}
-      <section className="py-32 bg-brand-navy relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center mb-32">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block uppercase">The Vision</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-10">About <span className="text-brand-coral">AEEE 2026</span></h2>
-              <p className="text-white/80 text-xl md:text-2xl leading-relaxed mb-12 font-medium">
-                Asia's Emerging Economies Expo (AEEE) 2026 is Canada's premier platform for connecting global investors with the high growth markets of Asia.
-              </p>
-              <p className="text-white/40 text-lg leading-relaxed mb-12 font-medium">
-                Hosted in Toronto, Canada's fastest growing tech and financial hub, the expo serves as a strategic bridge for businesses looking to navigate the complexities of international expansion and tap into the world's most dynamic growth engines.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8">
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="space-y-4 p-8 bg-white/5 border border-white/10 rounded-2xl group hover:border-brand-coral transition-all"
-                >
-                  <Target className="w-10 h-10 text-brand-coral" />
-                  <h4 className="text-xl font-black text-white tracking-tight">Our Mission</h4>
-                  <p className="text-white/40 text-sm font-medium leading-relaxed">facilitating high impact partnerships across the Asia Canada corridor.</p>
-                </motion.div>
-                <motion.div 
-                  whileHover={{ scale: 1.05 }}
-                  className="space-y-4 p-8 bg-white/5 border border-white/10 rounded-2xl group hover:border-brand-coral transition-all"
-                >
-                  <Eye className="w-10 h-10 text-brand-coral" />
-                  <h4 className="text-xl font-black text-white tracking-tight">Our Vision</h4>
-                  <p className="text-white/40 text-sm font-medium leading-relaxed">Leading platform for emerging market intelligence and collaboration.</p>
-                </motion.div>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <img src="https://raw.githubusercontent.com/vathsan-sharma/imagess/main/pexels-henri-mathieu-8349430.jpg" className="w-full h-full object-cover" alt="Expo Experience" />
-              </div>
-              <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-brand-coral/20 blur-[120px] rounded-full -z-10"></div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* 5. Animated Numbers Section - Minimalist Redesign */}
-      <section className="py-40 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12 md:gap-0">
+      <section className="py-24 md:py-40 bg-brand-navy border-t border-white/5">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-4 block uppercase">Impact in Numbers</span>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">Expo <span className="text-brand-coral">Milestones</span></h2>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
             {IMPACT_STATS.map((stat, i) => (
               <motion.div 
                 key={i} 
@@ -235,9 +184,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* 6. Participating Nations - Full Color & Transitions */}
-      <section className="py-32 bg-brand-navy border-t border-white/5 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+      <section className="py-24 md:py-32 bg-brand-navy border-t border-white/5 relative overflow-hidden">
+        <div className="container-custom relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:24 gap-8">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -245,7 +194,7 @@ const Home: React.FC = () => {
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8">Participating <br/><span className="text-brand-coral">Nations</span></h2>
               <p className="text-white/40 text-xl font-medium max-w-2xl">
-                A global showcase of Asia's most dynamic emerging economies alongside Canada's industrial strength.
+                A global showcase of Asia's most dynamic powerful economies alongside Canada's industrial strength.
               </p>
             </motion.div>
             <Link to="/countries" className="inline-flex items-center gap-4 text-brand-coral font-bold text-sm tracking-tight hover:text-white transition-colors">
@@ -275,7 +224,6 @@ const Home: React.FC = () => {
                   
                   <div className="absolute inset-0 p-8 flex flex-col justify-end">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-4xl drop-shadow-2xl">{country.flag}</span>
                       <h4 className="text-3xl font-black text-white tracking-tighter drop-shadow-2xl">{country.name}</h4>
                     </div>
                     <p className="text-white/70 text-sm font-medium line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -290,9 +238,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* 8. Target Sectors - Modern Grid Design */}
-      <section className="py-40 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-32">
+      <section className="py-24 md:py-40 bg-brand-navy border-t border-white/5">
+        <div className="container-custom">
+          <div className="text-center mb-20 md:mb-32">
             <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block uppercase">Strategic Focus</span>
             <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter leading-none mb-8 uppercase">Industry <span className="text-brand-coral">Sectors</span></h2>
             <p className="text-white/40 text-xl font-medium max-w-3xl mx-auto">
@@ -336,13 +284,13 @@ const Home: React.FC = () => {
       </section>
 
       {/* 7. Who is this for? - Minimalist Redesign */}
-      <section className="py-40 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-24 md:py-40 bg-brand-navy border-t border-white/5">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-32"
+            className="text-center mb-20 md:mb-32"
           >
             <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block uppercase">Engagement</span>
             <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase">Who is this for?</h2>
@@ -397,9 +345,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* Event Experience Teaser */}
-      <section className="py-32 bg-brand-navy border-t border-white/5 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <section className="py-24 md:py-32 bg-brand-navy border-t border-white/5 relative overflow-hidden">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
             <motion.div 
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -446,9 +394,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* 9. Speakers Section - New */}
-      <section className="py-32 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+      <section className="py-24 md:py-32 bg-brand-navy border-t border-white/5">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 md:24 gap-8">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -493,14 +441,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* 10. Strategic Roadmap Section */}
-      <section className="py-40 bg-brand-navy border-t border-white/5 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-coral/5 blur-[150px] rounded-full pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <section className="py-24 md:py-40 bg-brand-navy border-t border-white/5 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[800px] bg-brand-coral/5 blur-[100px] md:blur-[150px] rounded-full pointer-events-none"></div>
+        <div className="container-custom relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-32"
+            className="text-center mb-20 md:mb-32"
           >
             <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-6 block uppercase">The Journey</span>
             <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-none mb-8 uppercase">Strategic <span className="text-brand-coral">Roadmap</span></h2>
@@ -551,9 +499,9 @@ const Home: React.FC = () => {
       </section>
 
       {/* 11. Partners & Sponsors Strip - New */}
-      <section className="py-32 bg-brand-navy border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24 reveal">
+      <section className="py-24 md:py-32 bg-brand-navy border-t border-white/5">
+        <div className="container-custom">
+          <div className="text-center mb-16 md:mb-24 reveal">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none mb-8">Our <span className="text-brand-coral">Partners</span></h2>
             <p className="text-white/40 text-xl font-medium max-w-3xl mx-auto">
               Collaborating with leading organizations to drive global trade and innovation.

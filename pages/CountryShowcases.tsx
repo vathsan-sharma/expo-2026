@@ -8,26 +8,26 @@ const CountryShowcases: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Simple & Impactful Page Header */}
-      <section className="bg-brand-navy pt-48 pb-32 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-32 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-5"></div>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto px-6 relative z-10"
+          className="container-custom relative z-10"
         >
           <span className="text-brand-coral font-bold tracking-[0.4em] text-xs mb-8 block italic uppercase">Participating nations</span>
           <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">
             Country showcases
           </h1>
           <p className="text-white/70 text-lg md:text-2xl max-w-3xl mx-auto italic font-medium leading-relaxed">
-            A comprehensive look at Asia’s emerging economies and Canada, featuring priority sectors and high impact investment domains.
+            A comprehensive look at Asia’s powerful economies and Canada, featuring key sectors and high impact investment domains.
           </p>
         </motion.div>
       </section>
 
       {/* Impactful Country Grid */}
-      <section className="max-w-7xl mx-auto px-6 space-y-32">
+      <section className="container-custom space-y-24 md:space-y-32">
         {COUNTRIES.map((country, idx) => (
           <motion.div 
             key={country.id} 
@@ -49,9 +49,6 @@ const CountryShowcases: React.FC = () => {
                 alt={country.name}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent"></div>
-              <div className="absolute top-8 right-8 text-6xl md:text-8xl drop-shadow-2xl z-20 group-hover:scale-110 transition-transform duration-700">
-                {country.flag}
-              </div>
             </motion.div>
 
             {/* Country Details */}
@@ -64,7 +61,6 @@ const CountryShowcases: React.FC = () => {
                     viewport={{ once: true }}
                     className="h-[1px] bg-brand-coral"
                   ></motion.div>
-                  <span className="text-brand-coral font-bold text-xs tracking-[0.3em] italic uppercase">Priority nation</span>
                 </div>
                 <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-none italic">
                   {country.name}
@@ -134,7 +130,7 @@ const CountryShowcases: React.FC = () => {
       </section>
 
       {/* Simple Impactful CTA */}
-      <section className="py-48 max-w-7xl mx-auto px-6 text-center">
+      <section className="py-24 md:py-48 container-custom text-center">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
