@@ -283,7 +283,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 referrerPolicy="no-referrer"
               />
               <span className="text-[10px] text-white/60 font-bold tracking-[0.2em] uppercase">
-                Asia's Powerful Economies Expo
+                Asia's Emerging Economies Expo
               </span>
             </Link>
 
@@ -297,7 +297,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
           
           <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[11px] font-medium tracking-tight text-white/40">
-            <p>&copy; 2026 Asia’s Powerful Economies Expo. All Rights Reserved.</p>
+            <p>&copy; 2026 Asia’s Emerging Economies Expo. All Rights Reserved.</p>
             <p className="mt-4 md:mt-0 space-x-8">
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <span className="text-white/10">|</span>

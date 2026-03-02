@@ -8,7 +8,7 @@ const TargetSectors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Professional Header */}
-      <section className="relative pt-32 md:pt-48 pb-16 md:pb-32 w-full flex items-center justify-center overflow-hidden">
+      <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-brand-navy"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(242,125,38,0.1),transparent_70%)]"></div>
@@ -95,7 +95,7 @@ const TargetSectors: React.FC = () => {
       </section>
 
       {/* Call to Action - Clean & Open */}
-      <section className="py-24 md:py-48 container-custom max-w-5xl text-center">
+      <section className="py-16 md:py-24 container-custom max-w-5xl text-center">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

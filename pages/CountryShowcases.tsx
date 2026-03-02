@@ -8,17 +8,17 @@ const CountryShowcases: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Simple & Impactful Page Header */}
-      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-32 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-5"></div>
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="container-custom relative z-10"
         >
-          <span className="text-brand-coral font-bold tracking-[0.4em] text-xs mb-8 block italic uppercase">Participating nations</span>
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic">
-            Country showcases
+          <span className="text-brand-coral font-bold tracking-[0.4em] text-xs mb-8 block italic uppercase reveal">Participating nations</span>
+          <h1 className="text-5xl md:text-8xl font-black text-white mb-10 tracking-tighter leading-none italic uppercase">
+            Country <span className="text-brand-coral">showcases</span>
           </h1>
           <p className="text-white/70 text-lg md:text-2xl max-w-3xl mx-auto italic font-medium leading-relaxed">
             A comprehensive look at Asia’s powerful economies and Canada, featuring key sectors and high impact investment domains.
@@ -27,7 +27,7 @@ const CountryShowcases: React.FC = () => {
       </section>
 
       {/* Impactful Country Grid */}
-      <section className="container-custom space-y-24 md:space-y-32">
+      <section className="container-custom space-y-16 md:space-y-24">
         {COUNTRIES.map((country, idx) => (
           <motion.div 
             key={country.id} 
@@ -41,7 +41,8 @@ const CountryShowcases: React.FC = () => {
             {/* Large Impactful Image */}
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className="w-full lg:w-1/2 relative group overflow-hidden rounded-3xl border border-white/10 aspect-[4/3] shadow-2xl"
+              transition={{ duration: 0.5 }}
+              className="w-full lg:w-1/2 relative group overflow-hidden rounded-3xl border border-white/10 aspect-[4/3] shadow-2xl shimmer-card"
             >
               <img 
                 src={PARTNER_SKYLINES[country.id as keyof typeof PARTNER_SKYLINES]} 
@@ -130,7 +131,7 @@ const CountryShowcases: React.FC = () => {
       </section>
 
       {/* Simple Impactful CTA */}
-      <section className="py-24 md:py-48 container-custom text-center">
+      <section className="py-16 md:py-24 container-custom text-center">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

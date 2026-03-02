@@ -20,7 +20,7 @@ const FAQ: React.FC = () => {
     {
       category: "General",
       questions: [
-        { q: "What is Asia's Powerful Economies Expo (AEEE) 2026?", a: "AEEE 2026 is a premier international trade event in Toronto, Canada, showcasing high growth opportunities across Asia's most dynamic powerful markets." },
+        { q: "What is Asia's Emerging Economies Expo (AEEE) 2026?", a: "AEEE 2026 is a premier international trade event in Toronto, Canada, showcasing high growth opportunities across Asia's most dynamic emerging markets." },
         { q: "Where and when will the event take place?", a: "The expo will be held at the Exhibition Place, Toronto, from October 15 17, 2026." },
         { q: "Who should attend AEEE 2026?", a: "The event is designed for investors, trade leaders, government officials, and business executives looking to scale operations in the Asia Canada corridor." }
       ]
@@ -54,7 +54,7 @@ const FAQ: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="container-custom relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Support Center</span>
@@ -66,11 +66,11 @@ const FAQ: React.FC = () => {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16 md:py-32 container-custom max-w-4xl">
-        <div className="space-y-24">
+      <section className="py-12 md:py-16 container-custom max-w-4xl">
+        <div className="space-y-16">
           {faqs.map((group, gIdx) => (
             <div key={gIdx} className="reveal">
-              <h2 className="text-2xl font-black text-brand-coral tracking-tighter mb-10 border-b border-white/5 pb-4 italic">[{group.category}]</h2>
+              <h2 className="text-2xl font-black text-brand-coral tracking-tighter mb-8 border-b border-white/5 pb-4 italic">[{group.category}]</h2>
               <div className="space-y-4">
                 {group.questions.map((faq, qIdx) => {
                   const index = gIdx * 10 + qIdx;
@@ -98,7 +98,7 @@ const FAQ: React.FC = () => {
         </div>
 
         {/* Still Have Questions */}
-        <div className="mt-48 bg-white/5 p-16 md:p-24 rounded-sm border border-white/10 text-center reveal relative overflow-hidden bg-dots">
+        <div className="mt-24 bg-white/5 p-12 md:p-16 rounded-sm border border-white/10 text-center reveal relative overflow-hidden bg-dots">
           <HelpCircle className="w-16 h-16 text-brand-coral mx-auto mb-10" />
           <h3 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-8 italic">Still Have Questions?</h3>
           <p className="text-white/40 text-lg mb-12 italic font-medium max-w-2xl mx-auto leading-relaxed">

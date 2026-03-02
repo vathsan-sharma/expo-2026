@@ -17,7 +17,7 @@ const Visitors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="container-custom relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Visitor Information</span>
@@ -29,8 +29,8 @@ const Visitors: React.FC = () => {
       </section>
 
       {/* Why Visit */}
-      <section className="py-16 md:py-32 container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-24 md:mb-48">
+      <section className="py-12 md:py-16 container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-16 md:mb-24">
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Visit the Expo?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
@@ -60,7 +60,7 @@ const Visitors: React.FC = () => {
         </div>
 
         {/* Ideal Visitors */}
-        <div className="mb-24 md:mb-48 reveal">
+        <div className="mb-16 md:mb-24 reveal">
           <h2 className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic">Ideal Visitors</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -78,7 +78,7 @@ const Visitors: React.FC = () => {
         </div>
 
         {/* What to Expect */}
-        <div className="bg-white/5 rounded-sm p-12 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-24 md:mb-48">
+        <div className="bg-white/5 rounded-sm p-12 md:p-24 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-16 md:mb-24">
           <h2 className="text-4xl md:text-7xl font-black mb-12 tracking-tighter leading-none text-center italic">What to Expect</h2>
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16">
             <div className="space-y-8">
@@ -104,7 +104,7 @@ const Visitors: React.FC = () => {
         </div>
 
         {/* Visitor Pass Options */}
-        <div className="mb-24 md:mb-48 reveal">
+        <div className="mb-16 md:mb-24 reveal">
           <h2 className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic">Visitor Pass Options</h2>
           <div className="grid md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -157,7 +157,7 @@ const Visitors: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-32 text-center reveal">
+        <div className="mt-16 md:mt-24 text-center reveal">
           <Link to="/registration" className="inline-flex items-center gap-4 bg-brand-coral text-white px-16 py-8 rounded-sm font-bold text-base tracking-tight hover:bg-white hover:text-brand-coral transition-all shadow-2xl group">
             Register as Visitor <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </Link>

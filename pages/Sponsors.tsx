@@ -17,7 +17,7 @@ const Sponsors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Strategic Partnership</span>
@@ -29,8 +29,8 @@ const Sponsors: React.FC = () => {
       </section>
 
       {/* Why Partner */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center mb-48">
+      <section className="py-12 md:py-16 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-16 md:mb-24">
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Partner as a Sponsor?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
@@ -74,8 +74,8 @@ const Sponsors: React.FC = () => {
         </div>
 
         {/* Benefits Strip */}
-        <div className="mb-48 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Key Sponsorship Benefits</h2>
+        <div className="mb-16 md:mb-24 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter text-white text-center italic">Key Sponsorship Benefits</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { icon: <Globe />, title: "Global Reach", text: "Exposure to 50,000+ attendees and millions via media." },
@@ -95,8 +95,8 @@ const Sponsors: React.FC = () => {
         </div>
 
         {/* Placeholder Logos */}
-        <div className="bg-white/5 rounded-sm p-16 md:p-24 text-center reveal border border-white/10 mb-48">
-          <h3 className="text-2xl font-black text-white tracking-tighter mb-16 italic">Our Sponsors and Partners</h3>
+        <div className="bg-white/5 rounded-sm p-12 md:p-16 text-center reveal border border-white/10 mb-16 md:mb-24">
+          <h3 className="text-2xl font-black text-white tracking-tighter mb-12 italic">Our Sponsors and Partners</h3>
           <div className="flex flex-wrap justify-center gap-12">
             {[1, 2, 3, 4, 5, 6].map(i => (
               <div key={i} className="w-32 h-16 bg-white/10 rounded-sm flex items-center justify-center font-black text-xs">LOGO {i}</div>

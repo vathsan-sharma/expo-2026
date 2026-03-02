@@ -39,7 +39,7 @@ const Agenda: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Event Schedule</span>
@@ -51,8 +51,8 @@ const Agenda: React.FC = () => {
       </section>
 
       {/* Overview */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center mb-48 reveal">
+      <section className="py-12 md:py-16 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-16 md:mb-24 reveal">
           <div>
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Conference Overview</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
@@ -94,8 +94,8 @@ const Agenda: React.FC = () => {
         </div>
 
         {/* Agenda Tabs */}
-        <div className="mb-48 reveal">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="mb-16 md:mb-24 reveal">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
             <div className="flex bg-white/5 p-2 rounded-sm border border-white/10">
               {[1, 2, 3].map(day => (
                 <button

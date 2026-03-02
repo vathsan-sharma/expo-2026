@@ -7,7 +7,7 @@ const Venue: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-32 md:pt-48 pb-16 md:pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -24,8 +24,8 @@ const Venue: React.FC = () => {
       </section>
 
       {/* Venue Description */}
-      <section className="py-16 md:py-32 container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-24 md:mb-48">
+      <section className="py-12 md:py-16 container-custom">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-16 md:mb-24">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -76,10 +76,10 @@ const Venue: React.FC = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="bg-white/5 rounded-sm p-12 md:p-32 text-white border border-white/10 relative overflow-hidden bg-dots mb-24 md:mb-48"
+          className="bg-white/5 rounded-sm p-12 md:p-24 text-white border border-white/10 relative overflow-hidden bg-dots mb-16 md:mb-24"
         >
-          <h2 className="text-4xl md:text-7xl font-black mb-12 tracking-tighter leading-none text-center italic">About Toronto, Canada</h2>
-          <p className="text-white/60 text-xl font-medium italic leading-relaxed max-w-4xl mx-auto text-center mb-16 md:mb-20">
+          <h2 className="text-4xl md:text-7xl font-black mb-10 tracking-tighter leading-none text-center italic">About Toronto, Canada</h2>
+          <p className="text-white/60 text-xl font-medium italic leading-relaxed max-w-4xl mx-auto text-center mb-12 md:mb-16">
             Toronto is Canada’s global financial hub and the ideal host for AEEE 2026. As Canada’s fastest growing tech hub, it offers a vibrant backdrop for international trade and innovation.
           </p>
           <div className="grid md:grid-cols-3 gap-12">
@@ -107,12 +107,12 @@ const Venue: React.FC = () => {
         </motion.div>
 
         {/* Accommodation */}
-        <div className="mb-24 md:mb-48">
+        <div className="mb-16 md:mb-24">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-12 md:mb-16 tracking-tighter text-white text-center italic uppercase"
+            className="text-4xl md:text-6xl font-black mb-10 md:mb-12 tracking-tighter text-white text-center italic uppercase"
           >
             Accommodation
           </motion.h2>
@@ -157,7 +157,7 @@ const Venue: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic uppercase"
+            className="text-4xl md:text-6xl font-black mb-12 tracking-tighter text-white text-center italic uppercase"
           >
             On Site Facilities
           </motion.h2>

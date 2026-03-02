@@ -17,7 +17,7 @@ const Exhibitors: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Global Showcase</span>
@@ -29,8 +29,8 @@ const Exhibitors: React.FC = () => {
       </section>
 
       {/* Why Exhibit */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-24 items-center mb-48">
+      <section className="py-12 md:py-16 max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 md:gap-24 items-center mb-16 md:mb-24">
           <div className="reveal">
             <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-brand-coral leading-none italic">Why Exhibit?</h2>
             <p className="text-white/60 text-xl leading-relaxed mb-12 font-medium italic">
@@ -76,8 +76,8 @@ const Exhibitors: React.FC = () => {
         </div>
 
         {/* Exhibitor Packages */}
-        <div className="mb-48 reveal">
-          <h2 className="text-4xl md:text-6xl font-black mb-16 tracking-tighter text-white text-center italic">Exhibitor Packages</h2>
+        <div className="mb-16 md:mb-24 reveal">
+          <h2 className="text-4xl md:text-6xl font-black mb-12 tracking-tighter text-white text-center italic">Exhibitor Packages</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { name: "Standard Booth", size: "9sqm", features: ["Shell Scheme", "Basic Lighting", "1 Power Socket", "Company Name Board"] },
@@ -105,8 +105,8 @@ const Exhibitors: React.FC = () => {
         </div>
 
         {/* How to Exhibit */}
-        <div className="bg-white/5 rounded-sm p-16 md:p-32 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-48">
-          <h2 className="text-4xl md:text-7xl font-black mb-16 tracking-tighter leading-none text-center italic">How to Exhibit</h2>
+        <div className="bg-white/5 rounded-sm p-12 md:p-16 text-white reveal border border-white/10 relative overflow-hidden bg-dots mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-7xl font-black mb-12 tracking-tighter leading-none text-center italic">How to Exhibit</h2>
           <div className="grid md:grid-cols-4 gap-8">
             {[
               { step: "01", title: "Enquiry", desc: "Submit your interest via our online form." },

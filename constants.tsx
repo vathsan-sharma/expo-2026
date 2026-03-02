@@ -7,7 +7,7 @@ import {
 import { Sector, Country, Feature, Milestone, Speaker, Testimonial, FAQItem } from './types';
 
 export const CONTACT_INFO = {
-  name: "Asia’s Powerful Economies Expo 2026",
+  name: "Asia’s Emerging Economies Expo 2026",
   tagline: "Gateway to Asia’s Expansion",
   phone: '(416) 902 9462',
   email: 'kula@csbconvention.org',
@@ -157,7 +157,7 @@ export const SPEAKERS: Speaker[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-  { id: '1', name: 'Amarjeet K', role: 'CEO', company: 'IndoCan Trade Solutions', quote: "The Asia's Powerful Economies Expo gave our company access to new markets and investors we wouldn't have met otherwise. Truly a game changer!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
+  { id: '1', name: 'Amarjeet K', role: 'CEO', company: 'IndoCan Trade Solutions', quote: "The Asia's Emerging Economies Expo gave our company access to new markets and investors we wouldn't have met otherwise. Truly a game changer!", image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100' },
 ];
 
 export const FAQS: FAQItem[] = [

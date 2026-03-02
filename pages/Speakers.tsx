@@ -24,7 +24,7 @@ const Speakers: React.FC = () => {
   return (
     <div className="pb-32 bg-brand-navy min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy pt-48 pb-24 text-center relative overflow-hidden">
+      <section className="bg-brand-navy pt-24 md:pt-32 pb-12 md:pb-16 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 animate-fade-in-up">
           <span className="text-brand-coral font-bold tracking-[0.3em] text-xs mb-8 block italic">Thought Leadership</span>
@@ -36,8 +36,8 @@ const Speakers: React.FC = () => {
       </section>
 
       {/* Intro */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-32 reveal">
+      <section className="py-12 md:py-16 max-w-7xl mx-auto px-6">
+        <div className="text-center mb-16 md:mb-24 reveal">
           <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-white italic">Speakers & Thought Leaders</h2>
           <p className="text-white/40 text-xl font-medium italic max-w-3xl mx-auto leading-relaxed">
             Our speakers bring deep expertise in cross border trade, digital transformation, and sustainable development across the world's most dynamic markets.
@@ -45,7 +45,7 @@ const Speakers: React.FC = () => {
         </div>
 
         {/* Featured Speakers */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-48">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24 md:mb-32">
           {featuredSpeakers.map((speaker, i) => (
             <div key={i} className="reveal group" style={{ transitionDelay: `${i * 100}ms` }}>
               <div className="relative aspect-[3/4] rounded-sm overflow-hidden mb-8 border border-white/10 bg-white/5 flex items-center justify-center">
@@ -70,7 +70,7 @@ const Speakers: React.FC = () => {
         </div>
 
         {/* All Speakers Grid Description */}
-        <div className="bg-white/5 rounded-sm p-16 md:p-32 text-center reveal border border-white/10 relative overflow-hidden bg-dots mb-48">
+        <div className="bg-white/5 rounded-sm p-12 md:p-16 text-center reveal border border-white/10 relative overflow-hidden bg-dots mb-24 md:mb-32">
           <Mic2 className="w-16 h-16 text-brand-coral mx-auto mb-12" />
           <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter text-white italic">100+ Global Speakers</h2>
           <p className="text-white/40 text-lg font-medium italic max-w-2xl mx-auto mb-16 leading-relaxed">

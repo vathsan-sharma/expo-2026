@@ -15,6 +15,7 @@
   --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-slow-pan: slowPan 30s ease-in-out infinite;
   --animate-spin-slow: spin 20s linear infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
 
   @keyframes fadeInUp {
     0% { opacity: 0; transform: translateY(30px); }
@@ -31,6 +32,10 @@
   @keyframes slowPan {
     0%, 100% { transform: scale(1.1) translateX(0); }
     50% { transform: scale(1.1) translateX(-3%) translateY(-1%); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 }
 
@@ -82,6 +87,51 @@
 
   .container-custom {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Image Reveal Effect */
+  .img-reveal-wrapper {
+    @apply relative overflow-hidden;
+  }
+  .img-reveal-wrapper::after {
+    @apply content-[''] absolute inset-0 bg-brand-coral z-10 translate-x-[-100%] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)];
+  }
+  .img-reveal-wrapper.active::after {
+    @apply translate-x-[100%];
+  }
+  .img-reveal-wrapper img {
+    @apply opacity-0 transition-opacity duration-500 delay-300;
+  }
+  .img-reveal-wrapper.active img {
+    @apply opacity-100;
+  }
+
+  /* Text Reveal Effect */
+  .text-reveal {
+    @apply relative overflow-hidden inline-block;
+  }
+  .text-reveal-inner {
+    @apply block translate-y-[100%] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)];
+  }
+  .active .text-reveal-inner {
+    @apply translate-y-0;
+  }
+
+  /* Magnetic Button Feel */
+  .magnetic-btn {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .magnetic-btn:hover {
+    @apply scale-105;
+  }
+
+  /* Shimmer Effect for Cards */
+  .shimmer-card {
+    @apply relative overflow-hidden;
+  }
+  .shimmer-card::before {
+    @apply content-[''] absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] z-20;
+    animation: shimmer 3s infinite;
   }
 }
 
